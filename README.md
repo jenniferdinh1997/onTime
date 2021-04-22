@@ -1,4 +1,28 @@
-**Setup**
+## Setup 
+
+1. Clone the repo
+2. Rename the folder to your Project, you can use the `mv` command like `mv mern-boilerplate yourprojectname`
+3. Delete the `.git` file, when you are in the root of the file, you can press `ls` and you should see a `.git` file, then go ahead and run `rm -rf .git`
+
+
+#### Setup your git repo
+1. in the project root `git init`
+2. `git add .` to add all the starter code
+3. `git commit -m "setup boilerplate"` 
+4. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
+5.  Then follow the directions on github that says ```…or create a new repository on the command line```
+
+it should look like this
+
+```
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@git.generalassemb.ly:SEI-CC/test.git // this will be whatever your address will be
+git push -u origin master
+```
+
+#### Setup the App
 
 ```npm install```
 
