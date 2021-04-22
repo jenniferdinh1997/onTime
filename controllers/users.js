@@ -2,15 +2,13 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const SECRET = process.env.SECRET;
 const { v4: uuidv4 } = require('uuid');
-const Post = require('../models/post');
 const S3 = require('aws-sdk/clients/s3');
 const s3 = new S3(); // initialize the construcotr
 // now s3 can crud on our s3 buckets
 
 module.exports = {
   signup,
-  login,
-  profile
+  login
 };
 
 function signup(req, res) {
@@ -22,7 +20,7 @@ function signup(req, res) {
 
   // FilePath unique name to be saved to our butckt
   const filePath = `${uuidv4()}/${req.file.originalname}`
-  const params = {Bucket: 'collectorcat', Key: filePath, Body: req.file.buffer};
+  const params = {Bucket: process.env.BUCKET_NAME, Key: filePath, Body: req.file.buffer};
   //your bucket name goes where collectorcat is 
   //////////////////////////////////////////////////////////////////////////////////
   s3.upload(params, async function(err, data){
@@ -47,7 +45,7 @@ function signup(req, res) {
 async function login(req, res) {
   try {
     const user = await User.findOne({email: req.body.email});
-    console.log(user, ' this user')
+    console.log(user, ' this user in login')
     if (!user) return res.status(401).json({err: 'bad credentials'});
     // had to update the password from req.body.pw, to req.body password
     user.comparePassword(req.body.password, (err, isMatch) => {
@@ -64,16 +62,6 @@ async function login(req, res) {
   }
 }
 
-
-async function profile(req, res){
-  try {
-    const user = await User.findOne({username: req.params.username})
-    const posts = await Post.find({user: user._id});
-    res.status(200).json({posts: posts, user: user})
-  } catch(err){
-    return res.status(401).json(err)
-  }
-}
 
 /*----- Helper Functions -----*/
 

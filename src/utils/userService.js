@@ -2,6 +2,9 @@ import tokenService from './tokenService';
 
 const BASE_URL = '/api/users/';
 
+
+// NOTE THIS IS configured to send of a multi/part form request
+// aka photo 
 function signup(user) {
   return fetch(BASE_URL + 'signup', {
     method: 'POST',
@@ -42,21 +45,9 @@ function login(creds) {
   .then(({token}) => tokenService.setToken(token));
 }
 
-function getProfile(username){
-  return fetch(BASE_URL + username, {
-    headers: {
-      'Authorization': 'Bearer ' + tokenService.getToken()
-    }
-  }).then(res => {
-    if(res.ok) return res.json()
-    throw new Error('User does not exist') // This is the error in our try catch(err)
-  })
-}
 
 export default {
   signup, 
-  getUser,
   logout,
-  login,
-  getProfile
+  login
 };
