@@ -6,17 +6,15 @@
 
 
 #### Setup your git repo
-1. in the project root `git init`
-2. `git add .` to add all the starter code
-3. `git commit -m "setup boilerplate"` 
-4. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
-5.  Then follow the directions on github that says ```…or create a new repository on the command line```
+
+1. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
+2.  Then follow the directions on github that says ```…or create a new repository on the command line```
 
 it should look like this
 
 ```
 git init
-git add README.md
+git add .
 git commit -m "first commit"
 git remote add origin git@git.generalassemb.ly:SEI-CC/test.git // this will be whatever your address will be
 git push -u origin master
@@ -38,5 +36,4 @@ BUCKET_NAME=catcollectorone
 SECRET=mysecretforjwt
 ```
 
-The app is configured, to use those respective key name for the database, jwt secret and aws bucket, of course
-you'll have your own values
+The app is configured, to use those respective key names for the database, jwt secret and aws bucket, of course you'll have your own values
