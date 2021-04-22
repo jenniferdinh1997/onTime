@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const { post } = require('../routes/api/users');
 
 const SALT_ROUNDS = 6;
 
