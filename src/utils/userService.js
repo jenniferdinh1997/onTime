@@ -45,10 +45,11 @@ function login(creds) {
   .then(({token}) => tokenService.setToken(token));
 }
 
-
-export default {
+const userService = {
   signup, 
   logout,
   login,
   getUser
 };
+
+export default userService
