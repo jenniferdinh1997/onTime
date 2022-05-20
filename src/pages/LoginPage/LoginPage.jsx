@@ -10,8 +10,8 @@ export default function LoginPage(props) {
       <ul>
         <li>Read the Login Model, You can change it to fit your needs</li>
         <li>
-    {"Make sure you read the Login fun in the User Controller, to know how it is setup to
-          find the user!"}
+          Make sure you read the Login func in the User Controller, to know how
+          it is setup to find the user!
         </li>
       </ul>
     </>
