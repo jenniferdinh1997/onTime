@@ -11,8 +11,8 @@ export default function SignUpPage(props) {
       <ul>
         <li>Read the User Model, You can change it to fit your needs</li>
         <li>
-          Make sure you read the Signup up func in the User Controller, to know how it is setup to
-          find the user!
+          Make sure you read the Signup up func in the User Controller, to know
+          how it is setup to find the user!
         </li>
       </ul>
     </>
