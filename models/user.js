@@ -5,13 +5,31 @@ const SALT_ROUNDS = 6;
 
 const userSchema = new mongoose.Schema(
   {
-    username: { type: String, required: true, lowercase: true, unique: true },
-    email: { type: String, required: true, lowercase: true, unique: true },
-    password: String,
-    photoUrl: String, // string from aws!
-  },
-  {
-    timestamps: true,
+    name: 
+      {type: String, 
+      required: true, 
+      lowercase: true, 
+      unique: true},
+    dob: 
+      {type: Date},
+    email: 
+      {type: String, 
+      required: true, 
+      lowercase: true, 
+      unique: true},
+    phone: 
+      {type: Number},
+    language: 
+      {type: String},
+    accessibility: 
+      {type: Boolean},
+    password: 
+      {type: String},
+    photoUrl: 
+      {type: String}, // string from aws!
+    type: 
+      {type: String, 
+      enum: ['driver', 'patient']}
   }
 );
 
