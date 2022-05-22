@@ -27,9 +27,6 @@ const userSchema = new mongoose.Schema(
       {type: String},
     photoUrl: 
       {type: String}, // string from aws!
-    type: 
-      {type: String, 
-      enum: ['driver', 'patient']}
   }
 );
 
