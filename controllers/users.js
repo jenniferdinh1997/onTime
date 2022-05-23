@@ -12,7 +12,7 @@ module.exports = {
 };
 
 function signup(req, res) {
-  console.log(req.body, req.file);
+  console.log(req.body, req.file, 'form inputs');
 
   // FilePath unique name to be saved to our bucket
   const filePath = `${uuidv4()}/${req.file.originalname}`;
