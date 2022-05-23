@@ -29,22 +29,34 @@ export default function SignUpPage(props) {
   }
 
   async function handleSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData()
+    formData.append('photo', selectedFile)
+    for (let fieldName in state) {
+      formData.append(fieldName, state[fieldName])
+    }
+
+    try {
+      await userService.signup(formData)
+    } catch (err) {
+      setError(err.message)
+    }
 
   }
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        Name: <input type='text' onChange={handleChange} />
-        Date of Birth: <input type='date' onChange={handleChange} />
-        Email: <input type='text' onChange={handleChange} />
-        Phone Number: <input type='tel' onChange={handleChange} />
-        Language: <input type='text' onChange={handleChange} />
+      <form autocomplete='off' onSubmit={handleSubmit}>
+        <input type='text' placeholder='Name' onChange={handleChange} />
+        <input type='date' placeholder='Date of Birth' onChange={handleChange} />
+        <input type='text' placeholder='Email' onChange={handleChange} />
+        <input type='tel' placeholder='Phone Number' onChange={handleChange} />
+        <input type='text' placeholder='Preferred Language' onChange={handleChange} />
         Accessibility Issues:
         <input type='radio' onChange={handleChange} /> Yes
         <input type='radio' onChange={handleChange} /> No
-        Password: <input type='password' onChange={handleChange} />
-        Upload Profile Picture: <input type='file' onChange={handleFileInput} />
+        <input type='password' placeholder='password' onChange={handleChange} />
+        Upload Profile Picture: <input type='file' name='photo' onChange={handleFileInput} />
       </form>
     </>
   );
