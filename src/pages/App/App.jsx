@@ -25,7 +25,7 @@ function App() {
       <Routes>
         <Route 
           path="/" 
-          element={<AddRide />} />
+          element={<AddRide user={user} />} />
         <Route
           path="/login"
           element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
