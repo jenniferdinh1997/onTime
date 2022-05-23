@@ -4,6 +4,7 @@ import "./App.css";
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
 import AddRide from '../AddRide/AddRide';
+import Home from '../Home/Home';
 import userService from "../../utils/userService";
 
 function App() {
@@ -23,8 +24,11 @@ function App() {
   if (user) {
     return (
       <Routes>
+        <Route
+          path='/'
+          element={<Home />} />
         <Route 
-          path="/" 
+          path="/add" 
           element={<AddRide user={user} />} />
         <Route
           path="/login"

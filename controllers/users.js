@@ -8,7 +8,7 @@ const s3 = new S3(); // initialize the construcotr
 
 module.exports = {
   signup,
-  login,
+  login
 };
 
 function signup(req, res) {
@@ -52,7 +52,6 @@ async function login(req, res) {
     return res.status(401).json(err);
   }
 }
-
 /*----- Helper Functions -----*/
 
 function createJWT(user) {
