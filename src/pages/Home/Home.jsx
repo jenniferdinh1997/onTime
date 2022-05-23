@@ -6,6 +6,7 @@ export default function Home() {
         <>
             <Header />
             <h1>App Name and Caption</h1>
+            <p>About Us</p>
         </>
     )
 }

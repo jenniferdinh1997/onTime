@@ -3,32 +3,30 @@ const bcrypt = require("bcrypt");
 
 const SALT_ROUNDS = 6;
 
-const userSchema = new mongoose.Schema(
-  {
-    name: 
-      {type: String, 
-      required: true, 
-      lowercase: true, 
-      unique: true},
-    dob: 
-      {type: Date},
-    email: 
-      {type: String, 
-      required: true, 
-      lowercase: true, 
-      unique: true},
-    phone: 
-      {type: Number},
-    language: 
-      {type: String},
-    accessibility: 
-      {type: Boolean},
-    password: 
-      {type: String},
-    photoUrl: 
-      {type: String}, // string from aws!
-  }
-);
+const userSchema = new mongoose.Schema({
+  name: 
+    {type: String, 
+    required: true, 
+    lowercase: true, 
+    unique: true},
+  dob: 
+    {type: Date},
+  email: 
+    {type: String, 
+    required: true, 
+    lowercase: true, 
+    unique: true},
+  phone: 
+    {type: Number},
+  language: 
+    {type: String},
+  accessibility: 
+    {type: Boolean},
+  password: 
+    {type: String},
+  photoUrl: 
+    {type: String}, // string from aws!
+});
 
 userSchema.set("toJSON", {
   transform: function (doc, ret) {
