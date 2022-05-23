@@ -6,6 +6,7 @@ export default function Header({ user }) {
         return (
         <>
             <Link to='/'>App Name</Link>
+            <Link to='/add'>Request a Ride</Link>
             <img src={user.photoUrl} />
             <h1>{user.name}</h1>
             <h1>See Ride History</h1>
