@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const Ride = require('../models/ride');
 const jwt = require("jsonwebtoken");
 const SECRET = process.env.SECRET;
 const { v4: uuidv4 } = require("uuid");
@@ -8,7 +9,8 @@ const s3 = new S3(); // initialize the construcotr
 
 module.exports = {
   signup,
-  login
+  login,
+  profile
 };
 
 function signup(req, res) {
@@ -52,6 +54,21 @@ async function login(req, res) {
     return res.status(401).json(err);
   }
 }
+
+async function profile(req,res) {
+  try {
+    const user = await User.findOne({name: req.params.name})
+    if(!user) return res.status(404).json({err: 'User not found'})
+
+    const rides = await Ride.find({user: user._id}).populate('user').exec();
+    console.log(rides, 'all rides')
+    res.status(200).json({rides: rides, user: user})
+  } catch(err) {
+    console.log(err, 'profile err')
+    res.status(400).json({err})
+  }
+}
+
 /*----- Helper Functions -----*/
 
 function createJWT(user) {

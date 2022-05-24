@@ -7,8 +7,8 @@ export default function Header({ user }) {
         return (
             <>
             <Link to='/'>App Name</Link>
-            <Link to='/details'>Request a Ride</Link>
-            <Link to='/'>See Ride History</Link>
+            <Link to='/trip'>Request a Ride</Link>
+            <Link to={`/${user.name}`}>See Ride History</Link>
             <Link to='/'>Log Out</Link>
             <Image src={user.photoUrl} avatar></Image>
             <h1>{user.name}</h1>

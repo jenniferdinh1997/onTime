@@ -3,7 +3,7 @@ import tokenService from './tokenService';
 const BASE_URL = '/api/rides/';
 
 export function create(ride) {
-    return fetch(BASE_URL + 'details', {
+    return fetch(BASE_URL + 'trip', {
         method: 'POST',
         body: ride,
         headers: {

@@ -4,7 +4,6 @@ const ridesCtrl = require("../../controllers/rides");
 const multer = require("multer");
 const upload = multer();
 
-router.post('/details', upload.none(), ridesCtrl.create);
-router.get('/details', ridesCtrl.index);
+router.post('/trip', upload.none(), ridesCtrl.create);
 
 module.exports = router;

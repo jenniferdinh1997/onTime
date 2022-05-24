@@ -4,6 +4,7 @@ import "./App.css";
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
 import RideDetails from '../RideDetails/RideDetails';
+import ProfilePage from '../ProfilePage/ProfilePage';
 import Home from '../Home/Home';
 import userService from "../../utils/userService";
 
@@ -28,8 +29,11 @@ function App() {
           path='/'
           element={<Home user={user} />} />
         <Route 
-          path="/details" 
+          path="/trip" 
           element={<RideDetails user={user} />} /> 
+        <Route
+          path='/:name'
+          element={<ProfilePage user={user} />} />
         <Route
           path="/login"
           element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
