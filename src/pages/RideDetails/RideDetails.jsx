@@ -6,15 +6,20 @@ import RideConfirmation from '../../components/RideConfirmation/RideConfirmation
 import * as rideApi from '../../utils/rideApi';
 
 export default function AddRide({ user }) {
-    const [ride, setRide] = useState([]);
+    const [ride, setRide] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
     //create a new ride
     async function handleAddRide(ride) {
-        const data = rideApi.create(ride);
-        console.log(data, 'response from server');
-        setRide([data.ride, ...ride]);
+        try {
+            const data = await rideApi.create(ride);
+            console.log(data, 'response from server');
+            setRide([data.ride, ...ride]);
+        } catch(err) {
+            console.log(err, 'error')
+            setError(err.message)
+        }
     }
 
     //show current ride

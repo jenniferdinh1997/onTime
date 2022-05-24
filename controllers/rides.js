@@ -6,15 +6,7 @@ module.exports = {
 }
 
 function create(req,res) {
-    console.log(req.body, req.user, 'body and user')
-    try {
-        const ride = Ride.create({date: req.body.date, pickup: req.body.pickup, dropoff: req.body.dropoff, user: req.body.user})
-        console.log(ride, 'ride')
-        res.status(201).json({ride: ride})
-    } catch(err) {
-        console.log(err)
-        res.json({data: err})
-    }
+    console.log(req.body, 'submitted contents')
 }
 
 async function index() {

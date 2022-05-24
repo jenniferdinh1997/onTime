@@ -1,9 +1,9 @@
 import tokenService from './tokenService';
 
-const BASE_URL = '/api/rides';
+const BASE_URL = '/api/rides/';
 
 export function create(ride) {
-    return fetch(BASE_URL, {
+    return fetch(BASE_URL + 'details', {
         method: 'POST',
         body: ride,
         headers: {
