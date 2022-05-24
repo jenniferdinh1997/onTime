@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { Image } from 'semantic-ui-react';
 
 export default function Header({ user }) {
@@ -8,7 +9,7 @@ export default function Header({ user }) {
             <>
             <Link to='/'>App Name</Link>
             <Link to='/trip'>Request a Ride</Link>
-            <Link to={`/${user.name}`}>See Ride History</Link>
+            <HashLink smooth to='/trip/#history'>See Ride History</HashLink>
             <Link to='/'>Log Out</Link>
             <Image src={user.photoUrl} avatar></Image>
             <Link to={`/${user.name}`}>{user.name}</Link>

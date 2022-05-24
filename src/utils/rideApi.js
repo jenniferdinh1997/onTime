@@ -16,7 +16,7 @@ export function create(ride) {
 }
 
 export function getAll() {
-    return fetch(BASE_URL, {
+    return fetch(BASE_URL + 'trip', {
       headers: {
         'Authorization': 'Bearer ' + tokenService.getToken()
       }

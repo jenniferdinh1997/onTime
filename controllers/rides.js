@@ -10,7 +10,11 @@ async function create(req,res) {
     res.status(201).json({ride: ride})
 }
 
-async function index() {
-    const ride = await Ride.find({}).populate('user').exec()
-    res.status(200).json({ride: ride})
+async function index(req,res) {
+    try {
+        const ride = await Ride.find({}).populate('user').exec()
+        res.status(200).json({ride})
+    } catch(err) {
+        console.log(err, 'this is the other error')
+    }
 }
