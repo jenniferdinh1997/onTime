@@ -11,7 +11,7 @@ export default function Header({ user }) {
             <Link to={`/${user.name}`}>See Ride History</Link>
             <Link to='/'>Log Out</Link>
             <Image src={user.photoUrl} avatar></Image>
-            <h1>{user.name}</h1>
+            <Link to={`/${user.name}`}>{user.name}</Link>
             </>
         )
     }

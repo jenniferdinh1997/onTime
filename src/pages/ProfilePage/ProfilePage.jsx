@@ -6,15 +6,15 @@ import Header from '../../components/Header/Header';
 import { useParams } from "react-router-dom";
 
 export default function ProfilePage() {
-    const [rides, setRides] = useState([]);
+    const [allRides, setAllRides] = useState([]);
     const [error, setError] = useState('');
     const [user, setUser] = useState({});
-    const { username } = useParams();
+    const { name } = useParams();
 
     //show profile
     async function getProfile() {
         try {
-            const data = await userService.getProfile(username);
+            const data = await userService.getProfile(name);
             setUser(() => data.user);
         } catch(err) {
             console.log(err)
@@ -31,12 +31,12 @@ export default function ProfilePage() {
         try {
             const data = await rideApi.getAll();
             console.log(data, 'ride api data')
-            setRides([data.rides])
+            setAllRides([data])
         } catch(err) {
             setError(err.message);
         }
     }
-
+    
     useEffect(() => {
         getRides();
     }, []);
@@ -44,8 +44,7 @@ export default function ProfilePage() {
     return (
         <>
             <Header user={user} />
-            <p>profile</p>
-            <RideHistory />
+            <RideHistory allRides={allRides} user={user} />
         </>
     )
 }

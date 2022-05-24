@@ -7,6 +7,7 @@ import RideDetails from '../RideDetails/RideDetails';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import Home from '../Home/Home';
 import userService from "../../utils/userService";
+import * as rideApi from '../../utils/rideApi';
 
 function App() {
   const [user, setUser] = useState(userService.getUser()); // getUser decodes our JWT token, into a javascript object

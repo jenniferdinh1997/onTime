@@ -10,7 +10,7 @@ export default function AddRide({ user }) {
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
-    //create a new ride
+    // create a new ride
     async function handleAddRide(ride) {
         const data = await rideApi.create(ride);
         setCurrentRide(data.ride)

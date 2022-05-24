@@ -61,10 +61,8 @@ async function profile(req,res) {
     if(!user) return res.status(404).json({err: 'User not found'})
 
     const rides = await Ride.find({user: user._id}).populate('user').exec();
-    console.log(rides, 'all rides')
     res.status(200).json({rides: rides, user: user})
   } catch(err) {
-    console.log(err, 'profile err')
     res.status(400).json({err})
   }
 }
