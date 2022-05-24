@@ -3,7 +3,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
-import AddRide from '../AddRide/AddRide';
+import RideDetails from '../RideDetails/RideDetails';
 import Home from '../Home/Home';
 import userService from "../../utils/userService";
 
@@ -26,10 +26,10 @@ function App() {
       <Routes>
         <Route
           path='/'
-          element={<Home />} />
+          element={<Home user={user} />} />
         <Route 
-          path="/add" 
-          element={<AddRide user={user} />} />
+          path="/details" 
+          element={<RideDetails user={user} />} /> 
         <Route
           path="/login"
           element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
