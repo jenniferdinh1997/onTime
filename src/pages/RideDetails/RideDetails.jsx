@@ -5,18 +5,28 @@ import AddRideForm from '../../components/AddRideForm/AddRideForm';
 import RideConfirmation from '../../components/RideConfirmation/RideConfirmation';
 import RideHistory from '../../components/RideHistory/RideHistory';
 import * as rideApi from '../../utils/rideApi';
+import './RideDetails.css';
 
 export default function AddRide({ user }) {
     const [currentRide, setCurrentRide] = useState('');
     const [allRides, setAllRides] = useState([]);
     const [error, setError] = useState('');
-    const navigate = useNavigate();
+    const [showForm, setShowForm] = useState(true)
+    const [showConfirm, setShowConfirm] = useState(false)
+    const [showHistory, setShowHistory] = useState(false)
 
-    // create a new ride
+    // create a new ride, hide form after user requests ride
     async function handleAddRide(ride) {
-        const data = await rideApi.create(ride);
-        setCurrentRide(data.ride)
-        setAllRides([data.ride, ...allRides])
+        try {
+            const data = await rideApi.create(ride);
+            setCurrentRide(data.ride)
+            setAllRides([data.ride, ...allRides])
+            setShowForm(false);
+            setShowConfirm(true);
+            setShowHistory(false);
+        } catch(err) {
+            console.log(err)
+        }
     }
 
     //show all the rides
@@ -33,28 +43,24 @@ export default function AddRide({ user }) {
         getRides();
     }, []);
 
-    //show form on load, delete form after user requests ride
-    const [showForm, setShowForm] = useState(true)
-    const [showConfirm, setShowConfirm] = useState(false)
-    const [showHistory, setShowHistory] = useState(false)
-    function handleShowForm(e) {
-        e.preventDefault();
-        setShowForm(false);
-        setShowConfirm(true);
-        setShowHistory(false);
-    }
-
-    //only show confirmation after user inputted ride
+    //only show confirmation after user inputted ride, show history after ride is finished
     function handleShowConfirm(e) {
         e.preventDefault();
         setShowConfirm(false)
         setShowHistory(true)
     }
 
+    //show ride history on click in header
+    function handleShowHistory(e) {
+        e.preventDefault();
+        setShowForm(false);
+        setShowHistory(true);
+    }
+
     return (
         <>
-            <Header user={user} />
-            <AddRideForm handleAddRide={handleAddRide} handleShowForm={handleShowForm} showForm={showForm} />
+            <Header user={user} handleShowHistory={handleShowHistory} />
+            <AddRideForm handleAddRide={handleAddRide} showForm={showForm} />
             <RideConfirmation user={user} currentRide={currentRide} handleShowConfirm={handleShowConfirm} showConfirm={showConfirm} />
             <RideHistory user={user} allRides={allRides} showHistory={showHistory} />
         </>

@@ -50,7 +50,7 @@ export default function AddRideForm(props) {
                     label='Drop Off Location' 
                     value={state.dropoff}
                     onChange={handleChange} />
-                <MDBBtn type='submit' onClick={props.handleShowForm}>Request Ride</MDBBtn>
+                <MDBBtn type='submit'>Request Ride</MDBBtn>
             </form>
         </>
         )}

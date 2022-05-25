@@ -11,7 +11,7 @@ import {
   } from 'mdb-react-ui-kit';
 import { Image } from 'semantic-ui-react';
 
-export default function Header({ user, handleLogout }) {
+export default function Header({ user, handleLogout, handleShowHistory }) {
     if (user) {
         return (
             <>
@@ -30,7 +30,7 @@ export default function Header({ user, handleLogout }) {
                                         <MDBNavbarLink href='/trip'>Request a Ride</MDBNavbarLink>
                                     </MDBNavbarItem>
                                     <MDBNavbarItem>
-                                        <MDBNavbarLink href='/trip/#history'>See Ride History</MDBNavbarLink>
+                                        <MDBNavbarLink href='/trip/#history' onClick={handleShowHistory}>See Ride History</MDBNavbarLink>
                                     </MDBNavbarItem>
                                 </MDBNavbarNav>
                                 <MDBNavbarNav className='ms-auto'>
