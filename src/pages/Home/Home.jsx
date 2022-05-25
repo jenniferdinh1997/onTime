@@ -4,9 +4,12 @@ import Header from '../../components/Header/Header';
 export default function Home({ user }) {
     return (
         <>
-            <Header user={user} />
-            <h1>App Name and Caption</h1>
-            <p>About Us</p>
+       <Header user={user} />
+        <div className='p-5 text-center bg-light'>
+            <h1 className='mb-3'>Heading</h1>
+            <h4 className='mb-3'>Subheading</h4>
+            <a className='btn btn-primary' href='' role='button'>Call to action</a>
+        </div>
         </>
     )
 }

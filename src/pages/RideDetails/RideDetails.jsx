@@ -24,7 +24,6 @@ export default function AddRide({ user }) {
             const data = await rideApi.getAll();
             setAllRides([...data.ride]);
         } catch(err) {
-            console.log(err.message, 'this is the error')
             setError(err.message);
         }
     }

@@ -15,6 +15,5 @@ async function index(req,res) {
         const ride = await Ride.find({}).populate('user').exec()
         res.status(200).json({ride})
     } catch(err) {
-        console.log(err, 'this is the other error')
     }
 }
