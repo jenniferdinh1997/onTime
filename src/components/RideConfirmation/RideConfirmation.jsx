@@ -2,19 +2,12 @@ import React, { useState } from 'react';
 import './RideConfirmation.css';
 import {MDBBtn} from 'mdb-react-ui-kit';
 
-export default function RideConfirmation({ user, currentRide }) {
-    const [showConfirm, setShowConfirm] = useState(true)
-
-    function handleShowConfirm(e) {
-        e.preventDefault();
-        setShowConfirm(false)
-    }
-
+export default function RideConfirmation({ user, currentRide, handleShowConfirm, showConfirm }) {
     return (
         <>
         {showConfirm && (
         <div className='card'>
-            <div class='card-body'>
+            <div className='card-body'>
                 <h5 className='card-title'>Your driver is on the way!</h5>
                 <img src={user.photoUrl} class='avatar' />
                 <p>{user.name}</p>

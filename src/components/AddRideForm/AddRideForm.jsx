@@ -10,7 +10,6 @@ export default function AddRideForm(props) {
         pickup: '',
         dropoff: ''
     });
-    const [showForm, setShowForm] = useState(true)
 
     function handleChange(e) {
         setState({
@@ -28,14 +27,9 @@ export default function AddRideForm(props) {
         props.handleAddRide(formData);
     }
 
-    function handleShowForm(e) {
-        e.preventDefault();
-        setShowForm(false)
-    }
-
     return(
         <div className='card'>
-        {showForm && (
+        {props.showForm && (
         <>
         <h5>Where to?</h5>
             <form onSubmit={handleSubmit}>
@@ -56,7 +50,7 @@ export default function AddRideForm(props) {
                     label='Drop Off Location' 
                     value={state.dropoff}
                     onChange={handleChange} />
-                <MDBBtn type='submit' onClick={handleShowForm}>Request Ride</MDBBtn>
+                <MDBBtn type='submit' onClick={props.handleShowForm}>Request Ride</MDBBtn>
             </form>
         </>
         )}

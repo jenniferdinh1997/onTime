@@ -19,6 +19,7 @@ export default function AddRide({ user }) {
         setAllRides([data.ride, ...allRides])
     }
 
+    //show all the rides
     async function getRides() {
         try {
             const data = await rideApi.getAll();
@@ -32,12 +33,30 @@ export default function AddRide({ user }) {
         getRides();
     }, []);
 
+    //show form on load, delete form after user requests ride
+    const [showForm, setShowForm] = useState(true)
+    const [showConfirm, setShowConfirm] = useState(false)
+    const [showHistory, setShowHistory] = useState(false)
+    function handleShowForm(e) {
+        e.preventDefault();
+        setShowForm(false);
+        setShowConfirm(true);
+        setShowHistory(false);
+    }
+
+    //only show confirmation after user inputted ride
+    function handleShowConfirm(e) {
+        e.preventDefault();
+        setShowConfirm(false)
+        setShowHistory(true)
+    }
+
     return (
         <>
             <Header user={user} />
-            <AddRideForm handleAddRide={handleAddRide} />
-            <RideConfirmation user={user} currentRide={currentRide} />
-            <RideHistory user={user} allRides={allRides} />
+            <AddRideForm handleAddRide={handleAddRide} handleShowForm={handleShowForm} showForm={showForm} />
+            <RideConfirmation user={user} currentRide={currentRide} handleShowConfirm={handleShowConfirm} showConfirm={showConfirm} />
+            <RideHistory user={user} allRides={allRides} showHistory={showHistory} />
         </>
     )
 }
