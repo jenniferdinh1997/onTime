@@ -19,7 +19,7 @@ export default function Header({ user, handleLogout }) {
                     <MDBNavbar expand='sm' light bgColor='white' fixed='top'>
                         <MDBContainer fluid>                          
                             <div className='collapse navbar-collapse'>
-                                <MDBNavbarNav className='me-auto'>
+                                <MDBNavbarNav left className='me-auto'>
                                     <MDBNavbarItem>
                                         <MDBNavbarLink href='/'>App Name</MDBNavbarLink>
                                     </MDBNavbarItem>
@@ -52,8 +52,18 @@ export default function Header({ user, handleLogout }) {
 
     return (
         <>
-            <Link to='/login'>Log In</Link>
-            <Link to='/signup'>Sign Up</Link>
+            <MDBNavbar expand='sm' light bgColor='white' fixed='top'>
+                <MDBContainer fluid>
+                    <MDBNavbarNav right className='ms-auto'>
+                        <MDBNavbarItem>
+                            <MDBNavbarLink href='/login'>Log In</MDBNavbarLink>
+                        </MDBNavbarItem>
+                        <MDBNavbarItem>
+                            <MDBNavbarLink href='/signup'>Sign Up</MDBNavbarLink>
+                        </MDBNavbarItem>
+                    </MDBNavbarNav>
+                </MDBContainer>
+            </MDBNavbar>
         </>
     )
 }
