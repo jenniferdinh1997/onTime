@@ -27,7 +27,7 @@ function App() {
       <Routes>
         <Route
           path='/'
-          element={<Home user={user} />} />
+          element={<Home user={user} handleLogout={handleLogout} />} />
         <Route 
           path="/trip" 
           element={<RideDetails user={user} />} /> 
