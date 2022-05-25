@@ -54,7 +54,10 @@ export default function Header({ user, handleLogout }) {
         <>
             <MDBNavbar expand='sm' light bgColor='white' fixed='top'>
                 <MDBContainer fluid>
-                    <MDBNavbarNav right className='ms-auto'>
+                    <MDBNavbarNav className='ms-auto'>
+                        <MDBNavbarItem>
+                            <MDBNavbarLink href='/'>App Name</MDBNavbarLink>
+                        </MDBNavbarItem>
                         <MDBNavbarItem>
                             <MDBNavbarLink href='/login'>Log In</MDBNavbarLink>
                         </MDBNavbarItem>

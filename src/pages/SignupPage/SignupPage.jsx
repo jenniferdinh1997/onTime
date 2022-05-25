@@ -1,7 +1,17 @@
 import React, { useState } from "react";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
+import Header from '../../components/Header/Header';
 import userService from "../../utils/userService";
 import { useNavigate } from "react-router-dom";
+import {
+  MDBInput,
+  MDBCol,
+  MDBRow,
+  MDBCheckbox,
+  MDBBtn,
+  MDBIcon,
+  MDBFile
+} from 'mdb-react-ui-kit';
 
 export default function SignUpPage(props) {
   const [error, setError] = useState('');
@@ -51,38 +61,39 @@ export default function SignUpPage(props) {
 
   return (
     <>
+      <Header />
       <form autoComplete='off' onSubmit={handleSubmit}>
-        <input 
+        <MDBInput className='mb-3'
           type='text' 
           name='name' 
-          placeholder='Name' 
+          label='Name' 
           value={state.name} 
           onChange={handleChange} />
-        Date of Birth: <input 
+        <MDBInput className='mb-4'
           type='date' 
           name='dob' 
-          placeholder='Date of Birth' 
+          label='Date of Birth' 
           value={state.dob} 
           onChange={handleChange} />
-        <input 
+        <MDBInput className='mb-4'
           type='text' 
           name='email' 
-          placeholder='Email' 
+          label='Email' 
           value={state.email} 
           onChange={handleChange} />
-        <input 
+        <MDBInput className='mb-4'
           type='tel' 
           name='phone' 
-          placeholder='Phone Number' 
+          label='Phone Number' 
           value={state.phone} 
           onChange={handleChange} />
-        <input 
+        <MDBInput className='mb-4'
           type='text' 
           name='language' 
-          placeholder='Preferred Language' 
+          label='Preferred Language' 
           value={state.language} 
           onChange={handleChange} />
-        Accessibility Issues: <input 
+        Accessibility Issues: <input
           type='radio' 
           name='accessibility' 
           value='yes' 
@@ -92,18 +103,18 @@ export default function SignUpPage(props) {
           name='accessibility' 
           value='no' 
           onChange={handleChange} /> No
-        <input 
+        <MDBInput className='mb-4'
           type='password' 
           name='password' 
-          placeholder='Password' 
+          label='Password' 
           value={state.password} 
           onChange={handleChange} />
-        Upload Profile Picture: <input 
+        <MDBFile className='mb-4'
           type='file' 
-          name='photo' 
+          name='photo'
+          label='Upload Profile Picture' 
           onChange={handleFileInput} />
-        <input 
-          type='submit' />
+        <MDBBtn type='submit'>Submit</MDBBtn>
       </form>
     </>
   );

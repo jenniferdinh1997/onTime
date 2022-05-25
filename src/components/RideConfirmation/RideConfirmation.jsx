@@ -1,15 +1,18 @@
 import React from 'react';
+import './RideConfirmation.css';
 
 export default function RideConfirmation({ user, currentRide }) {
     return (
-        <>
-            <h1>Your driver is on the way!</h1>
-            <img src={user.photoUrl} />
-            <p>{user.name}</p>
-            <h2>Ride Details</h2>
-            <h3>{currentRide.date}</h3>
-            <h3>Pick Up: {currentRide.pickup}</h3>
-            <h3>Drop Off: {currentRide.dropoff}</h3>
-        </>
+        <div class='card'>
+            <div class='card-body'>
+                <h5 class='card-title'>Your driver is on the way!</h5>
+                <img src={user.photoUrl} class='avatar' />
+                <p>{user.name}</p>
+                <h6>Ride Details</h6>
+                <p>{currentRide.date}</p>
+                <p>Pick Up: {currentRide.pickup}</p>
+                <p>Drop Off: {currentRide.dropoff}</p>
+            </div>
+        </div>
     )
 }

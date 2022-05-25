@@ -8,7 +8,6 @@ import {
   MDBInput,
   MDBCol,
   MDBRow,
-  MDBCheckbox,
   MDBBtn,
   MDBIcon
 } from 'mdb-react-ui-kit';
@@ -61,11 +60,8 @@ export default function LoginPage(props) {
           onChange={handleChange} />
 
         <MDBRow className='mb-4'>
-          <MDBCol className='d-flex justify-content-center'>
-            <MDBCheckbox id='form2Example3' label='Remember me' defaultChecked />
-          </MDBCol>
           <MDBCol>
-            <a href='#!'>Forgot password?</a>
+            <a href=''>Forgot password?</a>
           </MDBCol>
         </MDBRow>
 
@@ -75,6 +71,7 @@ export default function LoginPage(props) {
       <p>
           Not a member? <a href='/signup'>Register</a>
       </p>
+      {error ? <ErrorMessage error={error} /> : null}
     </>
   );
 }

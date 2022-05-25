@@ -34,14 +34,6 @@ function App() {
         <Route
           path='/:name'
           element={<ProfilePage user={user} />} />
-        <Route
-          path="/login"
-          element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
-        />
-        <Route
-          path="/signup"
-          element={<SignupPage handleSignUpOrLogin={handleSignUpOrLogin} />}
-        />
       </Routes>
     );
   }

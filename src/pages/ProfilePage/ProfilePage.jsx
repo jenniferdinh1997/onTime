@@ -14,14 +14,13 @@ export default function ProfilePage() {
             const data = await userService.getProfile(name);
             setUser(() => data.user);
         } catch(err) {
-            console.log(err)
             setError('no profile');
         }
     }
 
     useEffect(() => {
         getProfile();
-    });
+    }, []);
 
     return (
         <>
