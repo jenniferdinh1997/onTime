@@ -46,6 +46,7 @@ export default function AddRide({ user }) {
     //only show confirmation after user inputted ride, show history after ride is finished
     function handleShowConfirm(e) {
         e.preventDefault();
+        setShowForm(false)
         setShowConfirm(false)
         setShowHistory(true)
     }

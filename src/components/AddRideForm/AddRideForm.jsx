@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import {
     MDBInput,
-    MDBBtn
+    MDBBtn,
+    MDBCard
   } from 'mdb-react-ui-kit';
+import './AddRideForm.css';
 
 export default function AddRideForm(props) {
     const [state, setState] = useState({
@@ -28,9 +30,9 @@ export default function AddRideForm(props) {
     }
 
     return(
-        <div className='card'>
-        {props.showForm && (
         <>
+        {props.showForm && (
+        <div className='card'>
         <h5>Where to?</h5>
             <form onSubmit={handleSubmit}>
                 <MDBInput className='mb-3'
@@ -50,10 +52,10 @@ export default function AddRideForm(props) {
                     label='Drop Off Location' 
                     value={state.dropoff}
                     onChange={handleChange} />
-                <MDBBtn type='submit'>Request Ride</MDBBtn>
+                <MDBBtn type='submit' color='light'>Request Ride</MDBBtn>
             </form>
-        </>
-        )}
         </div>
+        )}
+        </>
     )
 }
