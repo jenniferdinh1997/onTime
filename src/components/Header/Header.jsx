@@ -19,7 +19,7 @@ export default function Header({ user, handleLogout, handleShowHistory }) {
                             <div className='collapse navbar-collapse'>
                                 <MDBNavbarNav left className='me-auto'>
                                     <MDBNavbarItem>
-                                        <MDBNavbarBrand href='/'><Icon name='large car' /></MDBNavbarBrand>
+                                        <MDBNavbarBrand href='/'><Icon name='car' /></MDBNavbarBrand>
                                     </MDBNavbarItem>
                                     <MDBNavbarItem>
                                         <MDBNavbarLink href='/#about'>About Us</MDBNavbarLink>
