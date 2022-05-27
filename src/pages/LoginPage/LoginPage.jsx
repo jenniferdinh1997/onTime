@@ -43,6 +43,7 @@ export default function LoginPage(props) {
   return (
     <>
     <Header />
+      <h3>Login to onTime</h3>
       <form autoComplete='off' onSubmit={handleSubmit}>
         <MDBInput 
           className='mb-4'
@@ -60,14 +61,16 @@ export default function LoginPage(props) {
           value={state.password}
           onChange={handleChange}
           required />
-        <MDBBtn type='submit' className='mb-4'>Log In</MDBBtn>
+        <div className='text-center'>
+          <MDBBtn type='submit' className='mb-4' color='light'>Log In</MDBBtn>
+        </div>
       </form>
-      <MDBRow className='mb-4'>
+      <MDBRow className='text-center'>
         <MDBCol>
           <a href=''>Forgot password?</a>
         </MDBCol>
       </MDBRow>
-      <p>
+      <p className='text-center'>
           Not a member? <a href='/signup'>Register</a>
       </p>
       {error ? <ErrorMessage error={error} /> : null}
