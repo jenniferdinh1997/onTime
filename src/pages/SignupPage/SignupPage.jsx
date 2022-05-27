@@ -7,11 +7,12 @@ import {
   MDBInput,
   MDBCol,
   MDBRow,
-  MDBCheckbox,
+  MDBRadio,
   MDBBtn,
   MDBIcon,
   MDBFile
 } from 'mdb-react-ui-kit';
+import './SignupPage.css';
 
 export default function SignUpPage(props) {
   const [error, setError] = useState('');
@@ -60,8 +61,9 @@ export default function SignUpPage(props) {
   }
 
   return (
-    <>
+    <div>
       <Header />
+      <h3>Sign up for onTime!</h3>
       <form autoComplete='off' onSubmit={handleSubmit}>
         <MDBInput className='mb-3'
           type='text' 
@@ -69,53 +71,57 @@ export default function SignUpPage(props) {
           label='Name' 
           value={state.name} 
           onChange={handleChange} />
-        <MDBInput className='mb-4'
+        <MDBInput className='mb-3'
           type='date' 
           name='dob' 
           label='Date of Birth' 
           value={state.dob} 
           onChange={handleChange} />
-        <MDBInput className='mb-4'
+        <MDBInput className='mb-3'
           type='text' 
           name='email' 
           label='Email' 
           value={state.email} 
           onChange={handleChange} />
-        <MDBInput className='mb-4'
+        <MDBInput className='mb-3'
           type='tel' 
           name='phone' 
           label='Phone Number' 
           value={state.phone} 
           onChange={handleChange} />
-        <MDBInput className='mb-4'
+        <MDBInput className='mb-3'
           type='text' 
           name='language' 
           label='Preferred Language' 
           value={state.language} 
           onChange={handleChange} />
-        Accessibility Issues: <input
-          type='radio' 
+        Accessibility Issues: <MDBRadio
           name='accessibility' 
-          value='yes' 
-          onChange={handleChange} /> Yes
-        <input 
-          type='radio' 
+          value='yes'
+          label='Yes'
+          onChange={handleChange} 
+          inline />
+        <MDBRadio className='mb-3'
           name='accessibility' 
           value='no' 
-          onChange={handleChange} /> No
-        <MDBInput className='mb-4'
+          label='No'
+          onChange={handleChange} 
+          inline />
+        <MDBInput className='mb-3'
           type='password' 
           name='password' 
           label='Password' 
           value={state.password} 
           onChange={handleChange} />
-        <MDBFile className='mb-4'
+        <MDBFile className='mb-3'
           type='file' 
           name='photo'
           label='Upload Profile Picture' 
           onChange={handleFileInput} />
-        <MDBBtn type='submit'>Submit</MDBBtn>
+        <div className='text-center'>
+          <MDBBtn type='submit' color='light'>Submit</MDBBtn>
+        </div>
       </form>
-    </>
+    </div>
   );
 }

@@ -54,7 +54,7 @@ export default function Header({ user, handleLogout, handleShowHistory }) {
                 <MDBContainer fluid>
                     <MDBNavbarNav className='ms-auto'>
                         <MDBNavbarItem>
-                            <MDBNavbarBrand href='/'><img src='public/OnTime.jpg' /></MDBNavbarBrand>
+                            <MDBNavbarBrand href='/'></MDBNavbarBrand>
                         </MDBNavbarItem>
                         <MDBNavbarItem>
                             <MDBNavbarLink href='/login'>Log In</MDBNavbarLink>
