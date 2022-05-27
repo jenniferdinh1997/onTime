@@ -7,7 +7,7 @@ import {
     MDBContainer,
     MDBNavbarBrand
   } from 'mdb-react-ui-kit';
-import { Image } from 'semantic-ui-react';
+import { Image, Icon } from 'semantic-ui-react';
 
 export default function Header({ user, handleLogout, handleShowHistory }) {
     if (user) {
@@ -19,10 +19,10 @@ export default function Header({ user, handleLogout, handleShowHistory }) {
                             <div className='collapse navbar-collapse'>
                                 <MDBNavbarNav left className='me-auto'>
                                     <MDBNavbarItem>
-                                        <MDBNavbarBrand href='/'></MDBNavbarBrand>
+                                        <MDBNavbarBrand href='/'><Icon name='large car' /></MDBNavbarBrand>
                                     </MDBNavbarItem>
                                     <MDBNavbarItem>
-                                        <MDBNavbarLink href='/'>About Us</MDBNavbarLink>
+                                        <MDBNavbarLink href='/#about'>About Us</MDBNavbarLink>
                                     </MDBNavbarItem>
                                     <MDBNavbarItem>
                                         <MDBNavbarLink href='/trip'>Request a Ride</MDBNavbarLink>

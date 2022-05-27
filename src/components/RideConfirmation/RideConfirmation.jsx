@@ -15,8 +15,8 @@ export default function RideConfirmation({ user, currentRide, handleShowConfirm,
                 <p>{currentRide.date}</p>
                 <p>Pick Up: {currentRide.pickup}</p>
                 <p>Drop Off: {currentRide.dropoff}</p>
-                <MDBBtn onClick={handleShowConfirm}>Complete Ride</MDBBtn>
-                <MDBBtn onClick={handleEditRide}>Edit Ride</MDBBtn>
+                <MDBBtn onClick={handleShowConfirm} color='light'>Complete Ride</MDBBtn>
+                <MDBBtn onClick={handleEditRide} color='light'>Edit Ride</MDBBtn>
             </div>
         </div>
         )}
