@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './RideConfirmation.css';
 import {MDBBtn} from 'mdb-react-ui-kit';
 
-export default function RideConfirmation({ user, currentRide, handleShowConfirm, showConfirm }) {
+export default function RideConfirmation({ user, currentRide, handleShowConfirm, showConfirm, handleEditRide }) {
     return (
         <>
         {showConfirm && (
@@ -16,6 +16,7 @@ export default function RideConfirmation({ user, currentRide, handleShowConfirm,
                 <p>Pick Up: {currentRide.pickup}</p>
                 <p>Drop Off: {currentRide.dropoff}</p>
                 <MDBBtn onClick={handleShowConfirm}>Complete Ride</MDBBtn>
+                <MDBBtn onClick={handleEditRide}>Edit Ride</MDBBtn>
             </div>
         </div>
         )}

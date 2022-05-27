@@ -1,13 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
 import {
     MDBNavbar,
     MDBNavbarNav,
     MDBNavbarItem,
     MDBNavbarLink,
     MDBContainer,
-    MDBIcon
+    MDBNavbarBrand
   } from 'mdb-react-ui-kit';
 import { Image } from 'semantic-ui-react';
 
@@ -21,7 +19,7 @@ export default function Header({ user, handleLogout, handleShowHistory }) {
                             <div className='collapse navbar-collapse'>
                                 <MDBNavbarNav left className='me-auto'>
                                     <MDBNavbarItem>
-                                        <MDBNavbarLink href='/'>App Name</MDBNavbarLink>
+                                        <MDBNavbarBrand href='/'></MDBNavbarBrand>
                                     </MDBNavbarItem>
                                     <MDBNavbarItem>
                                         <MDBNavbarLink href='/'>About Us</MDBNavbarLink>
@@ -56,7 +54,7 @@ export default function Header({ user, handleLogout, handleShowHistory }) {
                 <MDBContainer fluid>
                     <MDBNavbarNav className='ms-auto'>
                         <MDBNavbarItem>
-                            <MDBNavbarLink href='/'>App Name</MDBNavbarLink>
+                            <MDBNavbarBrand href='/'><img src='public/OnTime.jpg' /></MDBNavbarBrand>
                         </MDBNavbarItem>
                         <MDBNavbarItem>
                             <MDBNavbarLink href='/login'>Log In</MDBNavbarLink>

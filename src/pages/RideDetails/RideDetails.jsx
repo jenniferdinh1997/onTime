@@ -25,7 +25,7 @@ export default function AddRide({ user }) {
             setShowConfirm(true);
             setShowHistory(false);
         } catch(err) {
-            console.log(err)
+            setError(err.message);
         }
     }
 
@@ -57,11 +57,18 @@ export default function AddRide({ user }) {
         setShowHistory(true);
     }
 
+    //take user back to form to edit ride
+    function handleEditRide(e) {
+        e.preventDefault();
+        setShowForm(true)
+        setShowConfirm(false);
+    }
+
     return (
         <>
             <Header user={user} handleShowHistory={handleShowHistory} />
             <AddRideForm handleAddRide={handleAddRide} showForm={showForm} />
-            <RideConfirmation user={user} currentRide={currentRide} handleShowConfirm={handleShowConfirm} showConfirm={showConfirm} />
+            <RideConfirmation user={user} currentRide={currentRide} handleShowConfirm={handleShowConfirm} showConfirm={showConfirm} handleEditRide = {handleEditRide} />
             <RideHistory user={user} allRides={allRides} showHistory={showHistory} />
         </>
     )

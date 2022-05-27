@@ -43,31 +43,30 @@ export default function LoginPage(props) {
   return (
     <>
     <Header />
-      <form onSubmit={handleSubmit}>
+      <form autoComplete='off' onSubmit={handleSubmit}>
         <MDBInput 
           className='mb-4'
           type='email'
           label='Email Address'
           name='email' 
           value={state.email}
-          onChange={handleChange} />
+          onChange={handleChange}
+          required />
         <MDBInput
           className='mb-4' 
           type='password'
           label='Password'
           name='password'
           value={state.password}
-          onChange={handleChange} />
-
-        <MDBRow className='mb-4'>
-          <MDBCol>
-            <a href=''>Forgot password?</a>
-          </MDBCol>
-        </MDBRow>
-
+          onChange={handleChange}
+          required />
         <MDBBtn type='submit' className='mb-4'>Log In</MDBBtn>
       </form>
-
+      <MDBRow className='mb-4'>
+        <MDBCol>
+          <a href=''>Forgot password?</a>
+        </MDBCol>
+      </MDBRow>
       <p>
           Not a member? <a href='/signup'>Register</a>
       </p>
