@@ -1,0 +1,35 @@
+nav {
+    background-color: black;
+}
+
+.right-nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.right-nav a {
+    float: right;
+    padding: 8px;
+    color: white;
+}
+
+.right-nav a:hover {
+    color: rgba(16, 185, 129, 0.6);
+}
+
+.nav-avatar {
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.left-nav a {
+    float: left;
+    padding: 8px;
+    color: white;
+}
+
+.left-nav a:hover {
+    color: rgba(16, 185, 129, 0.6);
+}
