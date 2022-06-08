@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
 import Intro from '../../components/Intro/Intro';
+import Footer from '../../components/Footer/Footer';
 import { HashLink } from 'react-router-hash-link';
 import './Home.css';
 
@@ -40,6 +41,7 @@ export default function Home({ user, handleLogout }) {
                     <p>Patients are matched specifically to a driver that speaks the same language and has a WAV if needed.</p>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }
