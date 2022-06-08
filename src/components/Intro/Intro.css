@@ -69,12 +69,14 @@ h1 {
     font-family: 'Roboto Condensed', sans-serif;
     text-align: center;
     font-weight: 800;
+    color: black;
 }
 
 h3 {
     font-family: 'Roboto Condensed', sans-serif;
     text-align: center;
     font-weight: 100;
+    color: black;
 }
 
 .buttons {
