@@ -6,6 +6,7 @@ import LoginPage from "../LoginPage/LoginPage";
 import RideDetails from '../RideDetails/RideDetails';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import Home from '../Home/Home';
+import About from '../About/About';
 import userService from "../../utils/userService";
 
 function App() {
@@ -34,6 +35,9 @@ function App() {
         <Route
           path='/:name'
           element={<ProfilePage user={user} />} />
+        <Route 
+          path='/about'
+          element={<About />} />
       </Routes>
     );
   }

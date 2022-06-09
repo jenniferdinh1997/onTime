@@ -9,7 +9,7 @@ export default function Header({ user, handleLogout, handleShowHistory }) {
                     <nav>
                         <div className='left-nav'>
                             <a href='/'>icon</a>
-                            <a href='/#about'>About Us</a>
+                            <a href='/about'>About Us</a>
                             <a href='/trip'>Ride</a>
                             <a href='/trip/#history' onClick={handleShowHistory}>See History</a>
                         </div>                    
@@ -29,7 +29,7 @@ export default function Header({ user, handleLogout, handleShowHistory }) {
         <>
             <header>
                 <nav>
-                    <div className='right'>
+                    <div className='right-nav'>
                         <a href='/login'>Log In</a>
                         <a href='/signup'>Sign Up</a>
                     </div>

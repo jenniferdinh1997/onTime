@@ -2,3 +2,9 @@
     background-color: black;
     color: white;
 }
+
+.copyright {
+    font-size: 10px;
+    color: rgb(136, 136, 136);
+    margin: 0 7px;
+}

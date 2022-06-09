@@ -12,7 +12,7 @@ export default function Intro() {
                 <button>
                     <span class="transition"></span>
                     <span class="gradient"></span>
-                    <span class="label">Learn More</span>
+                    <span class="label"><a href='/about'>Learn More</a></span>
                 </button>
                 <button>
                     <span class="transition"></span>
