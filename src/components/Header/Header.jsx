@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.css';
+import { Link } from 'react-router-dom';
 
 export default function Header({ user, handleLogout, handleShowHistory }) {
     if (user) {
@@ -8,8 +9,8 @@ export default function Header({ user, handleLogout, handleShowHistory }) {
                 <header>
                     <nav>
                         <div className='left-nav'>
-                            <a href='/'>icon</a>
-                            <a href='/about'>About Us</a>
+                            <Link to='/'><img src={'/OnTime.jpg'} className='logo' /></Link>
+                            <Link to='/about'>About Us</Link>
                             <a href='/trip'>Ride</a>
                             <a href='/trip/#history' onClick={handleShowHistory}>See History</a>
                         </div>                    
@@ -29,6 +30,10 @@ export default function Header({ user, handleLogout, handleShowHistory }) {
         <>
             <header>
                 <nav>
+                    <div className='left-nav'>
+                        <a href='/'><img src={'/OnTime.jpg'} className='logo' /></a>
+                    </div>
+
                     <div className='right-nav'>
                         <a href='/login'>Log In</a>
                         <a href='/signup'>Sign Up</a>

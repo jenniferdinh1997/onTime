@@ -34,3 +34,10 @@ nav {
 .left-nav a:hover {
     color: rgba(16, 185, 129, 0.6);
 }
+
+.logo {
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}

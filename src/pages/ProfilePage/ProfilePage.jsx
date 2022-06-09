@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import userService from "../../utils/userService";
 import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+import ProfileCard from '../../components/ProfileCard/ProfileCard';
 import { useParams } from "react-router-dom";
 
 export default function ProfilePage() {
@@ -25,6 +27,8 @@ export default function ProfilePage() {
     return (
         <>
             <Header user={user} />
+            <ProfileCard user={user} />
+            <Footer />
         </>
     )
 }

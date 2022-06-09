@@ -13,8 +13,8 @@
 }
 
 .description {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
     font-size: 0.8em;
 }
 
@@ -23,12 +23,18 @@ h4 {
     font-weight: 700;
     color: black;
     margin-top: 40px;
+    text-align: center;
 }
 
 .desc-left {
-    margin: 8px;
+    margin: 10px;
+    grid-column-start: 2;
+    grid-column-end: 3
+
 }
 
 .desc-right {
-    margin: 8px;
+    margin: 10px;
+    grid-column-start: 3;
+    grid-column-end: 4;
 }

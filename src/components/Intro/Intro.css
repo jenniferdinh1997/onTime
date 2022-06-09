@@ -3,12 +3,13 @@
     background-size: contain;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin: 8px;
 }
 
 .content {
     background-color: white;
     padding: 2em;
-    margin: 1em 3em;
+    margin: 1em 2em;
     grid-column-start: 2;
     grid-column-end: 6;
 }

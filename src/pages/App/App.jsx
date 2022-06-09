@@ -37,7 +37,7 @@ function App() {
           element={<ProfilePage user={user} />} />
         <Route 
           path='/about'
-          element={<About />} />
+          element={<About user={user} />} />
       </Routes>
     );
   }
