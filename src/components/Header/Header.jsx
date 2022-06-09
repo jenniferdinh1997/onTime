@@ -9,10 +9,10 @@ export default function Header({ user, handleLogout, handleShowHistory }) {
                 <header>
                     <nav>
                         <div className='left-nav'>
-                            <Link to='/'><img src={'/OnTime.jpg'} className='logo' /></Link>
+                            <Link to='/' style={{fontWeight: '700'}}>onTime</Link>
                             <Link to='/about'>About Us</Link>
-                            <a href='/trip'>Ride</a>
-                            <a href='/trip/#history' onClick={handleShowHistory}>See History</a>
+                            <Link to='/trip'>Ride</Link>
+                            <Link to='/trip/#history' onClick={handleShowHistory}>See History</Link>
                         </div>                    
                         
                         <div className='right-nav'>
@@ -31,7 +31,7 @@ export default function Header({ user, handleLogout, handleShowHistory }) {
             <header>
                 <nav>
                     <div className='left-nav'>
-                        <a href='/'><img src={'/OnTime.jpg'} className='logo' /></a>
+                        <Link to='/' style={{fontWeight: '700'}}>onTime</Link>
                     </div>
 
                     <div className='right-nav'>
