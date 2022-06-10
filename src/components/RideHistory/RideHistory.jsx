@@ -1,5 +1,5 @@
 import React from 'react';
-import {MDBBtn} from 'mdb-react-ui-kit';
+import './RideHistory.css';
 
 export default function RideHistory({ allRides, showHistory }) {
     const history = allRides.map((rides) => {
@@ -12,7 +12,7 @@ export default function RideHistory({ allRides, showHistory }) {
         <>
         {showHistory && (
         <div className='card'>
-            <h6 id='history'>Ride History</h6>
+            <h3 id='history'>Ride History</h3>
             <div className='card-body'>
                 {history}
             </div>

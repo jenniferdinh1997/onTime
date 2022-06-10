@@ -37,7 +37,7 @@ export default function Footer() {
 
               <ul className='list-unstyled mb-0'>
                 <li>
-                  <a href='#!' className='text-white'>About Us</a>
+                  <a href='/about' className='text-white'>About Us</a>
                 </li>
                 <li>
                   <a href='#!' className='text-white'>Careers</a>

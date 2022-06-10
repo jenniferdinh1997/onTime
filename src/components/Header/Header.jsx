@@ -17,8 +17,8 @@ export default function Header({ user, handleLogout, handleShowHistory }) {
                         
                         <div className='right-nav'>
                             <img src={user.photoUrl} className='nav-avatar' />
-                            <a href={`/${user.name}`}>{user.name}</a>
-                            <a href='' onClick={handleLogout}>Log Out</a>
+                            <Link to={`/${user.name}`}>{user.name}</Link>
+                            <Link to='' onClick={handleLogout}>Log Out</Link>
                         </div>
                     </nav>
                 </header>
@@ -35,8 +35,8 @@ export default function Header({ user, handleLogout, handleShowHistory }) {
                     </div>
 
                     <div className='right-nav'>
-                        <a href='/login'>Log In</a>
-                        <a href='/signup'>Sign Up</a>
+                        <Link to='/login'>Log In</Link>
+                        <Link to='/signup'>Sign Up</Link>
                     </div>
                 </nav>
             </header>
