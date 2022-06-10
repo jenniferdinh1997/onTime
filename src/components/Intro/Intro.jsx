@@ -10,14 +10,14 @@ export default function Intro() {
 
             <div className='buttons'>
                 <button>
-                    <span class="transition"></span>
-                    <span class="gradient"></span>
-                    <span class="label"><a href='/about'>Learn More</a></span>
+                    <span className="transition"></span>
+                    <span className="gradient"></span>
+                    <span className="label"><a href='/about'>Learn More</a></span>
                 </button>
                 <button>
-                    <span class="transition"></span>
-                    <span class="gradient"></span>
-                    <span class="label">Sign Up to Drive</span>
+                    <span className="transition"></span>
+                    <span className="gradient"></span>
+                    <span className="label">Sign Up to Drive</span>
                 </button>
             </div>
         </div>
