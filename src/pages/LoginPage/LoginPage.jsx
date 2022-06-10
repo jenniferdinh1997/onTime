@@ -3,14 +3,7 @@ import "./LoginPage.css";
 import Header from '../../components/Header/Header';
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import userService from "../../utils/userService";
-import { useNavigate } from "react-router-dom";
-import {
-  MDBInput,
-  MDBCol,
-  MDBRow,
-  MDBBtn,
-  MDBIcon
-} from 'mdb-react-ui-kit';
+import { useNavigate, Link } from "react-router-dom";
 
 export default function LoginPage(props) {
   const [error, setError] = useState('');
@@ -43,36 +36,37 @@ export default function LoginPage(props) {
   return (
     <>
     <Header />
-      <h3>Login to onTime</h3>
-      <form autoComplete='off' onSubmit={handleSubmit}>
-        <MDBInput 
-          className='mb-4'
+      <h3 className='loginh3'>Login to onTime</h3>
+      <form autoComplete='off' onSubmit={handleSubmit} className='addRideForm'>
+        <label className='formLabel'>Email</label>
+        <input 
           type='email'
-          label='Email Address'
           name='email' 
           value={state.email}
+          className='input'
           onChange={handleChange}
           required />
-        <MDBInput
-          className='mb-4' 
+        <label className='formLabel'>Password</label>
+        <input
           type='password'
           label='Password'
           name='password'
           value={state.password}
+          className='input'
           onChange={handleChange}
           required />
-        <div className='text-center'>
-          <MDBBtn type='submit' className='mb-4' color='light'>Log In</MDBBtn>
-        </div>
+        <button type='submit'>
+                    <span className="transition"></span>
+                    <span className="gradient"></span>
+                    <span className="label">Log In</span>
+                </button>
       </form>
-      <MDBRow className='text-center'>
-        <MDBCol>
-          <a href=''>Forgot password?</a>
-        </MDBCol>
-      </MDBRow>
-      <p className='text-center'>
-          Not a member? <a href='/signup'>Register</a>
-      </p>
+
+      <div className='signup'>
+        <p>Not a member?</p> 
+        <Link to='/signup' className='signup-link'>Sign Up</Link>
+      </div>
+
       {error ? <ErrorMessage error={error} /> : null}
     </>
   );

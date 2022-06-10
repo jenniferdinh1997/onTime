@@ -38,3 +38,7 @@ h4 {
     grid-column-start: 3;
     grid-column-end: 4;
 }
+
+p {
+    font-size: 1em;
+}
