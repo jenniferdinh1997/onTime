@@ -3,10 +3,9 @@
 onTime is an app created with the intention of providing easy and accessible transportation to your doctor's appointments. Drivers and patients are matched based on language preferences and accessibility to prevent any communication issues.
 
 ## Getting Started
-[Link to App](https://ontime-1.herokuapp.com/login)
 ![Home Page](public/assets/ss3.png)
 ![Ride Page](public/assets/ss2.png)
-![Confirmation Page](public/assets/ss1.png)
+[Link to App](https://ontime-1.herokuapp.com/login)
 
 ### Technologies Used
 - Express
@@ -18,3 +17,4 @@ onTime is an app created with the intention of providing easy and accessible tra
 ### Future Improvements
 - Implement driver model and have ride requests show up in driver's account
 - Implement Google Maps API to show passenger the route of their trip
+- Implement Uber API to estimate price for patient's trip
