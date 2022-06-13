@@ -4,7 +4,11 @@ import './RideHistory.css';
 export default function RideHistory({ allRides, showHistory }) {
     const history = allRides.map((rides) => {
         return (
-            <p key={rides._id}>Date: {rides.date} Pick Up: {rides.pickup} Drop Off: {rides.dropoff} </p>
+            <div className='historyCard'>
+                <p key={rides._id} className='historyList'><span style={{fontWeight:'bold'}}>Date: </span>{rides.date}</p>
+                <p className='historyList'><span style={{fontWeight:'bold'}}>Pick Up: </span> {rides.pickup}</p>
+                <p className='historyList'><span style={{fontWeight:'bold'}}>Drop Off: </span> {rides.dropoff}</p>
+            </div>
         );
     })
 

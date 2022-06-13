@@ -56,10 +56,10 @@ export default function LoginPage(props) {
           onChange={handleChange}
           required />
         <button type='submit'>
-                    <span className="transition"></span>
-                    <span className="gradient"></span>
-                    <span className="label">Log In</span>
-                </button>
+          <span className="transition"></span>
+          <span className="gradient"></span>
+          <span className="label">Log In</span>
+        </button>
       </form>
 
       <div className='signup'>

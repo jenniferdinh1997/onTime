@@ -41,6 +41,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
+    margin-bottom: 20px;
 }
 
 .about-p3, .about-h3 {
