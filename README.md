@@ -4,7 +4,9 @@ onTime is an app created with the intention of providing easy and accessible tra
 
 ## Getting Started
 [Link to App](https://ontime-1.herokuapp.com/login)
-![Screenshot](public/assets/screenshot.png)
+![Home Page](public/assets/ss3.png)
+![Ride Page](public/assets/ss2.png)
+![Confirmation Page](public/assets/ss1.png)
 
 ### Technologies Used
 - Express
