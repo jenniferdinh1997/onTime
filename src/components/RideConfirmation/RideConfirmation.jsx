@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './RideConfirmation.css';
-import {MDBBtn} from 'mdb-react-ui-kit';
 
 export default function RideConfirmation({ user, currentRide, handleShowConfirm, showConfirm, handleEditRide }) {
     return (
@@ -15,8 +14,16 @@ export default function RideConfirmation({ user, currentRide, handleShowConfirm,
                 <p>{currentRide.date}</p>
                 <p>Pick Up: {currentRide.pickup}</p>
                 <p>Drop Off: {currentRide.dropoff}</p>
-                <MDBBtn onClick={handleShowConfirm} color='light'>Complete Ride</MDBBtn>
-                <MDBBtn onClick={handleEditRide} color='light'>Edit Ride</MDBBtn>
+                <button onClick={handleShowConfirm}>
+                    <span className="transition"></span>
+                    <span className="gradient"></span>
+                    <span className="label">Complete Ride</span>
+                </button>
+                <button onClick={handleEditRide}>
+                    <span className="transition"></span>
+                    <span className="gradient"></span>
+                    <span className="label">Edit Ride</span>
+                </button>
             </div>
         </div>
         )}

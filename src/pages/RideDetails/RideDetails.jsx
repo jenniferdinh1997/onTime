@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header';
 import AddRideForm from '../../components/AddRideForm/AddRideForm';
 import RideConfirmation from '../../components/RideConfirmation/RideConfirmation';
 import RideHistory from '../../components/RideHistory/RideHistory';
+import Footer from '../../components/Footer/Footer';
 import * as rideApi from '../../utils/rideApi';
 import './RideDetails.css';
 
@@ -71,6 +72,7 @@ export default function AddRide({ user }) {
             <AddRideForm handleAddRide={handleAddRide} showForm={showForm} />
             <RideConfirmation user={user} currentRide={currentRide} handleShowConfirm={handleShowConfirm} showConfirm={showConfirm} handleEditRide = {handleEditRide} />
             <RideHistory user={user} allRides={allRides} showHistory={showHistory} />
+            <Footer />
         </>
     )
 }
