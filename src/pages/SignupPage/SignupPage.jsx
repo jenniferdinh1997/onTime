@@ -3,15 +3,6 @@ import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Header from '../../components/Header/Header';
 import userService from "../../utils/userService";
 import { useNavigate } from "react-router-dom";
-import {
-  MDBInput,
-  MDBCol,
-  MDBRow,
-  MDBRadio,
-  MDBBtn,
-  MDBIcon,
-  MDBFile
-} from 'mdb-react-ui-kit';
 import './SignupPage.css';
 
 export default function SignUpPage(props) {
@@ -63,63 +54,104 @@ export default function SignUpPage(props) {
   return (
     <div>
       <Header />
-      <h3>Sign up for onTime!</h3>
-      <form autoComplete='off' onSubmit={handleSubmit}>
-        <MDBInput className='mb-3'
-          type='text' 
-          name='name' 
-          label='Name' 
-          value={state.name} 
-          onChange={handleChange} />
-        <MDBInput className='mb-3'
-          type='date' 
-          name='dob' 
-          label='Date of Birth' 
-          value={state.dob} 
-          onChange={handleChange} />
-        <MDBInput className='mb-3'
-          type='text' 
-          name='email' 
-          label='Email' 
-          value={state.email} 
-          onChange={handleChange} />
-        <MDBInput className='mb-3'
-          type='tel' 
-          name='phone' 
-          label='Phone Number' 
-          value={state.phone} 
-          onChange={handleChange} />
-        <MDBInput className='mb-3'
-          type='text' 
-          name='language' 
-          label='Preferred Language' 
-          value={state.language} 
-          onChange={handleChange} />
-        Accessibility Issues: <MDBRadio
-          name='accessibility' 
-          value='yes'
-          label='Yes'
-          onChange={handleChange} 
-          inline />
-        <MDBRadio className='mb-3'
-          name='accessibility' 
-          value='no' 
-          label='No'
-          onChange={handleChange} 
-          inline />
-        <MDBInput className='mb-3'
-          type='password' 
-          name='password' 
-          label='Password' 
-          value={state.password} 
-          onChange={handleChange} />
-        <MDBFile className='mb-3'
-          type='file' 
-          name='photo'
-          label='Upload Profile Picture' 
-          onChange={handleFileInput} />
-        <div className='text-center'>
-          <MDBBtn type='submit' color='light'>Submit</MDBBtn>
+      <h3 className='loginh3'>Sign up for onTime</h3>
+      <form autoComplete='off' onSubmit={handleSubmit} className='signupForm'>
+        <div className='nameSU'>
+          <label className='formLabel'>Name (required)</label>
+          <input
+            type='text' 
+            name='name' 
+            value={state.name}
+            className='input'
+            onChange={handleChange} />
+        </div>
+
+        <div className='dobSU'>
+          <label className='formLabel'>Date of Birth</label>
+          <input
+            type='date' 
+            name='dob' 
+            value={state.dob}
+            className='input'
+            onChange={handleChange} />
+        </div>
+
+        <div className='phoneSU'>
+          <label className='formLabel'>Phone Number</label>
+          <input
+            type='tel' 
+            name='phone'
+            value={state.phone} 
+            className='input'
+            onChange={handleChange} />
+        </div>
+
+        <div className='emailSU'>
+          <label className='formLabel'>Email (required)</label>
+          <input
+            type='text' 
+            name='email' 
+            value={state.email} 
+            className='input'
+            onChange={handleChange} />
+        </div>
+
+        <div className='langSU'>
+          <label className='formLabel'>Language</label>
+          <input
+            type='text' 
+            name='language' 
+            value={state.language} 
+            className='input'
+            onChange={handleChange} />
+        </div>
+
+        <div className='accSU'>
+          <label className='formLabel'>Accessibility Issues</label>
+          <div className='radio'>
+            <input
+              type='radio'
+              name='accessibility' 
+              value='yes'
+              id='yes'
+              className='input'
+              onChange={handleChange} />
+            <label for='yes'>Yes</label>
+            <input
+              type='radio'
+              name='accessibility' 
+              value='no'
+              id='no' 
+              className='input'
+              onChange={handleChange}  />
+            <label for='no'>No</label>
+          </div>
+        </div>
+
+        <div className='pwSU'>
+          <label className='formLabel'>Password</label>
+          <input
+            type='password' 
+            name='password' 
+            value={state.password} 
+            className='input'
+            onChange={handleChange} />
+        </div>
+
+        <div className='uploadSU'>
+          <label className='formLabel'>Upload Photo</label>
+          <input
+            type='file' 
+            name='photo'
+            onChange={handleFileInput} />
+        </div>
+
+        <div className='buttonSU'>
+          <button type='submit'>
+            <span className="transition"></span>
+            <span className="gradient"></span>
+            <span className="label">Sign Up</span>
+          </button>
         </div>
       </form>
     </div>
