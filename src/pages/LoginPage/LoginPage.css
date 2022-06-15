@@ -10,10 +10,41 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 25px;
+    margin-top: 0.2em;
 }
 
 .loginh3 {
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-top: 0;
+    margin-bottom: 0.2em;
+    width: 100%;
+}
+
+.loginCard {
+    grid-column-start: 5;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.loginPage {
+    height: 95vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.member {
+    margin-bottom: 0;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.emailLI, .pwLI {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }

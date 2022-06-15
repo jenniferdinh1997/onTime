@@ -35,39 +35,47 @@ export default function LoginPage(props) {
 
   return (
     <>
-    <Header />
-      <h3 className='loginh3'>Login to onTime</h3>
-      <form autoComplete='off' onSubmit={handleSubmit} className='addRideForm'>
-        <label className='formLabel'>Email</label>
-        <input 
-          type='email'
-          name='email' 
-          value={state.email}
-          className='input'
-          onChange={handleChange}
-          required />
-        <label className='formLabel'>Password</label>
-        <input
-          type='password'
-          label='Password'
-          name='password'
-          value={state.password}
-          className='input'
-          onChange={handleChange}
-          required />
-        <button type='submit'>
-          <span className="transition"></span>
-          <span className="gradient"></span>
-          <span className="label">Log In</span>
-        </button>
-      </form>
+      <Header />
+      <div className='loginPage'>
+        <div className='loginCard'>
+          <h3 className='loginh3'>Login to onTime</h3>
+          <form autoComplete='off' onSubmit={handleSubmit} className='loginForm'>
+            <div className='emailLI'>
+              <label className='formLabel'>Email</label>
+              <input 
+                type='email'
+                name='email' 
+                value={state.email}
+                className='input'
+                onChange={handleChange}
+                required />
+            </div>
+            <div className='pwLI'>
+              <label className='formLabel'>Password</label>
+              <input
+                type='password'
+                label='Password'
+                name='password'
+                value={state.password}
+                className='input'
+                onChange={handleChange}
+                required />
+            </div>
+            <button type='submit'>
+              <span className="transition"></span>
+              <span className="gradient"></span>
+              <span className="label">Log In</span>
+            </button>
+          </form>
 
-      <div className='signup'>
-        <p>Not a member?</p> 
-        <Link to='/signup' className='signup-link'>Sign Up</Link>
+          <div className='signup'>
+            <p className='member'>Not a member?</p> 
+            <Link to='/signup' className='signup-link'>Sign Up</Link>
+          </div>
+
+          {error ? <ErrorMessage error={error} /> : null}
+        </div>
       </div>
-
-      {error ? <ErrorMessage error={error} /> : null}
     </>
   );
 }

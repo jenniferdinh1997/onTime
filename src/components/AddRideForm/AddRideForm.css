@@ -9,7 +9,7 @@
 }
 
 .input {
-    width: 85%;
+    width: 100%;
     background-color: #05060f0a;
     border-radius: .5rem;
     padding: 0 1rem;
@@ -19,9 +19,8 @@
 }
 
 .formLabel {
-    display: block;
-    margin-bottom: .3rem;
-    font-size: .9rem;
+    margin-bottom: .3em;
+    font-size: .9em;
     font-weight: bold;
     color: #05060f99;
 }
