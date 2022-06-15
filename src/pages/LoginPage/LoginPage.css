@@ -1,5 +1,6 @@
 .signup-link {
     color: black;
+    font-size: 0.8em;
 }
 
 .signup-link:hover {
@@ -24,6 +25,7 @@
     grid-column-end: 7;
     grid-row-start: 2;
     grid-row-end: 4;
+    background-color: white;
 }
 
 .loginPage {
@@ -31,10 +33,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
+    background-image: url('../../../public/map-background.jpeg');
 }
 
 .member {
     margin-bottom: 0;
+    font-size: 0.8em;
 }
 
 .loginForm {
@@ -47,4 +51,33 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+.mainLogo {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.logoh1 {
+    width: 100%;
+    font-size: 4em;
+    text-align: left;
+}
+
+.features {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+li {
+    margin: 10px 0px;
+    color: black;
+}
+
+ul {
+    padding-left: 0;
 }
