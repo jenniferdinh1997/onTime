@@ -1,5 +1,5 @@
-h3 {
-    text-align: center;
+.signupCard {
+    margin-top: 20px;
 }
 
 .signupForm {
@@ -13,6 +13,7 @@ h3 {
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
+    margin-right: 10px;
 }
 
 .dobSU {
@@ -41,6 +42,7 @@ h3 {
     grid-column-end: 3;
     grid-row-start: 4;
     grid-row-end: 5;
+    margin-right: 10px;
 }
 
 .accSU {

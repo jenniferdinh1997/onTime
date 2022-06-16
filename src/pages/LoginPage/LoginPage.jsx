@@ -40,6 +40,7 @@ export default function LoginPage(props) {
         <div className='login-border'></div>
         <div className='mainLogo'>
           <h1>onTime</h1>
+          <img src={'/OnTime.png'} />
         </div>
 
         <div className='loginCard'>
