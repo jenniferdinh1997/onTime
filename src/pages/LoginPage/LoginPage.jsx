@@ -37,12 +37,13 @@ export default function LoginPage(props) {
     <>
       <Header />
       <div className='loginPage'>
+        <div className='login-border'></div>
         <div className='mainLogo'>
-          <h1 className='logoh1'>onTime</h1>
+          <h1>onTime</h1>
         </div>
 
         <div className='loginCard'>
-          <h3 className='loginh3'>Login to onTime</h3>
+          <h3>Get Started</h3>
           <form autoComplete='off' onSubmit={handleSubmit} className='loginForm'>
             <div className='emailLI'>
               <label className='formLabel'>Email</label>
@@ -79,14 +80,6 @@ export default function LoginPage(props) {
 
           {error ? <ErrorMessage error={error} /> : null}
         </div>
-      
-      <div className='features'>
-          <ul>
-            <li>Top Notch Care</li>
-            <li>Driver-Passenger Compatibility</li>
-            <li>Earn Rewards</li>
-          </ul>
-      </div>
       </div>
     </>
   );

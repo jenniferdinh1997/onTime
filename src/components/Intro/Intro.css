@@ -17,7 +17,7 @@
 button {
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 15px;
-    padding: 0.5em 0.8em;
+    padding: 0.4em;;
     font-weight: 500;
     background: black;
     color: white;
@@ -58,7 +58,7 @@ button {
    }
    
 button:hover .transition {
-    width: 14em;
+    width: 20em;
     height: 14em;
    }
    
