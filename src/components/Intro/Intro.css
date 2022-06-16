@@ -58,7 +58,7 @@ button {
    }
    
 button:hover .transition {
-    width: 20em;
+    width: 40em;
     height: 14em;
    }
    

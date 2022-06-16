@@ -55,8 +55,16 @@ export default function SignUpPage(props) {
     <>
       <Header />
       <div className='signupCard'>
-        <h3>Get Started</h3>
+        <div className='side-blurb'>
+          <h1>Never miss another doctor's appointment</h1>
+          <ul>
+            <li>Top Notch Care</li>
+            <li>Driver-Passenger Compatibility</li>
+            <li>Minimal Wait Times</li>
+          </ul>
+        </div>
         <form autoComplete='off' onSubmit={handleSubmit} className='signupForm'>
+          <h3>Get Started</h3>
           <div className='nameSU'>
             <label className='formLabel'>Name (required)</label>
             <input
@@ -140,20 +148,21 @@ export default function SignUpPage(props) {
           </div>
 
           <div className='uploadSU'>
-            <label className='formLabel'>Upload Photo</label>
+            <label className='formLabel'>Upload Photo: </label>
+            <label className='uploadLabel' for='upload-btn'>Choose File</label>
             <input
               type='file' 
               name='photo'
-              onChange={handleFileInput} />
+              id='upload-btn'
+              onChange={handleFileInput} 
+              hidden />
           </div>
 
-          <div className='buttonSU'>
-            <button type='submit'>
-              <span className="transition"></span>
-              <span className="gradient"></span>
-              <span className="label">Sign Up</span>
-            </button>
-          </div>
+          <button type='submit'>
+            <span className="transition"></span>
+            <span className="gradient"></span>
+            <span className="label">Sign Up</span>
+          </button>
         </form>
       </div>
     </>

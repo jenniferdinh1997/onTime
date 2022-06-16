@@ -1,55 +1,74 @@
 .signupCard {
-    margin-top: 20px;
+    background-color: rgb(46, 98, 72);
+    display: grid;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: 1fr 3fr 1fr;
 }
 
 .signupForm {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(8, 1fr);
+    background-color: white;
+    border-radius: 4%;
+    margin-right: 30px;
+    padding: 20px;
 }
 
-.nameSU {
-    grid-column-start: 2;
+form > h3 {
+    grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
+    text-align: left;
+}
+
+.nameSU {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
     margin-right: 10px;
 }
 
 .dobSU {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 2;;
-}
-
-.phoneSU {
     grid-column-start: 2;
-    grid-column-end: 4;
+    grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 3;
 }
 
-.emailSU {
-    grid-column-start: 2;
-    grid-column-end: 4;
+.phoneSU {
+    grid-column-start: 1;
+    grid-column-end: 3;
     grid-row-start: 3;
     grid-row-end: 4;
 }
 
-.langSU {
-    grid-column-start: 2;
+.emailSU {
+    grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 4;
     grid-row-end: 5;
+}
+
+.langSU {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 5;
+    grid-row-end: 6;
     margin-right: 10px;
 }
 
 .accSU {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 4;
-    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 5;
+    grid-row-end: 6;
 }
 
 .radio {
@@ -58,27 +77,60 @@
 }
 
 .pwSU {
-    grid-column-start: 2;
-    grid-column-end: 4;
-    grid-row-start: 5;
-    grid-row-end: 6;
-}
-
-.uploadSU {
-    grid-column-start: 2;
-    grid-column-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
     grid-row-start: 6;
     grid-row-end: 7;
 }
 
-.buttonSU {
-    grid-column-start: 2;
-    grid-column-end: 4;
+.uploadSU {
+    grid-column-start: 1;
+    grid-column-end: 3;
     grid-row-start: 7;
     grid-row-end: 8;
-    text-align: center;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.signupForm > button {
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 input[type='radio'] {
     margin: 5px;
+}
+
+.uploadLabel {
+    font-size: 15px;
+    padding: 5px 10px;
+    font-weight: 600;
+    background: #05060f0a;
+    color: #05060f99;
+    border: 1px solid #05060f99;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.2em;
+    margin: 8px;
+}
+
+.side-blurb {
+    color: white;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    padding: 10px 20px;
+}
+
+.side-blurb > h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+li {
+    padding: 10px;
+    font-size: 1.2em;
 }
