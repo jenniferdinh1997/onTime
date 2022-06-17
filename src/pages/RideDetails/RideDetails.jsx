@@ -59,6 +59,13 @@ export default function AddRide({ user }) {
         setShowHistory(true);
     }
 
+    //show ride form on click in header
+    function handleShowForm(e) {
+        e.preventDefault();
+        setShowForm(true);
+        setShowHistory(false);
+    }
+
     //take user back to form to edit ride
     function handleEditRide(e) {
         e.preventDefault();
@@ -68,7 +75,7 @@ export default function AddRide({ user }) {
 
     return (
         <div className='rides'>
-            <Header user={user} handleShowHistory={handleShowHistory} />
+            <Header user={user} handleShowHistory={handleShowHistory} handleShowForm={handleShowForm} />
             <AddRideForm handleAddRide={handleAddRide} showForm={showForm} />
             <RideConfirmation user={user} currentRide={currentRide} handleShowConfirm={handleShowConfirm} showConfirm={showConfirm} handleEditRide = {handleEditRide} />
             <RideHistory user={user} allRides={allRides} showHistory={showHistory} />

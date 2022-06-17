@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 
-export default function Header({ user, handleLogout, handleShowHistory }) {
+export default function Header({ user, handleLogout, handleShowHistory, handleShowForm }) {
     if (user) {
         return (
             <>
@@ -11,7 +11,7 @@ export default function Header({ user, handleLogout, handleShowHistory }) {
                         <div className='left-nav'>
                             <Link to='/' style={{fontWeight: '700'}}>onTime</Link>
                             <Link to='/about'>About Us</Link>
-                            <Link to='/trip'>Ride</Link>
+                            <Link to='/trip' onClick={handleShowForm}>Ride</Link>
                             <Link to='/trip/#history' onClick={handleShowHistory}>See History</Link>
                         </div>                    
                         
