@@ -1,6 +1,7 @@
 import React from 'react';
 import './ProfileCard.css';
 import { FaCreditCard, FaCar, FaQuestion } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 export default function ProfileCard({ user }) {
     return (
@@ -16,17 +17,19 @@ export default function ProfileCard({ user }) {
 
             <div className='row2'>
                 <div className='wallet'>
-                    <FaCreditCard style={{fontSize: '2em'}}/>
+                    <FaCreditCard style={{fontSize: '2em', color: 'gray'}}/>
                     <p>Wallet</p>
                 </div>
 
                 <div className='trips'>
-                    <FaCar style={{fontSize: '2em'}}/>
-                    <p>Trips</p>
+                    <Link to='/trip'>
+                        <FaCar style={{fontSize: '2em', color: 'gray'}}/>
+                        <p>Trips</p>
+                    </Link>
                 </div>
 
                 <div className='help'>
-                    <FaQuestion style={{fontSize: '2em'}}/>
+                    <FaQuestion style={{fontSize: '2em', color: 'gray'}}/>
                     <p>Help</p>
                 </div>
             </div>

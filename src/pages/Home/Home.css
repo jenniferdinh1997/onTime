@@ -2,12 +2,7 @@
     background-color: white;
 }
 
-.home1 {
-    width: 100%;
-    margin-bottom: 8px;
-}
-
-.home2 {
+.home1, .home2 {
     width: 100%;
     margin-bottom: 8px;
 }
@@ -29,7 +24,8 @@ h4 {
 .desc-left {
     margin: 10px;
     grid-column-start: 2;
-    grid-column-end: 3
+    grid-column-end: 3;
+    color: black;
 
 }
 
@@ -37,6 +33,7 @@ h4 {
     margin: 10px;
     grid-column-start: 3;
     grid-column-end: 4;
+    color: black;
 }
 
 p {

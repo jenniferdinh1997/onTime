@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import ProfileCard from '../../components/ProfileCard/ProfileCard';
 import { useParams } from "react-router-dom";
+import './ProfilePage.css';
 
 export default function ProfilePage() {
     const [error, setError] = useState('');
@@ -25,10 +26,10 @@ export default function ProfilePage() {
     }, []);
 
     return (
-        <>
+        <div className='profile-page'>
             <Header user={user} />
             <ProfileCard user={user} />
             <Footer />
-        </>
+        </div>
     )
 }

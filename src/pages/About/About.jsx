@@ -5,7 +5,7 @@ import './About.css';
 
 export default function About({ user }) {
     return (
-        <div>
+        <div className='about-page'>
             <Header user={user} />
             <div className='about1'>
                 <img src={'/about-header.png'} className='about-header' />

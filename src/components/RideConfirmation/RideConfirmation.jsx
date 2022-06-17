@@ -11,7 +11,7 @@ export default function RideConfirmation({ user, currentRide, handleShowConfirm,
                 <img src={user.photoUrl} class='avatar' />
                 <p>{user.name}</p>
                 <h6>Ride Details</h6>
-                <p>{currentRide.date}</p>
+                <p>Date: {currentRide.date}</p>
                 <p>Pick Up: {currentRide.pickup}</p>
                 <p>Drop Off: {currentRide.dropoff}</p>
                 <button onClick={handleShowConfirm}>

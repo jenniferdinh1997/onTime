@@ -1,10 +1,10 @@
 .card {
-    padding: 40px;
-    margin: 10px;
+    padding: 35px 35px 20px 35px;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
+    margin-bottom: 30px;
     box-shadow: 0 1px 25px rgba(0,0,0,0.2);
 }
 
@@ -35,3 +35,7 @@
     outline: none;
     border-color: #05060f;
   }
+
+.addRideForm > button {
+    margin-top: 15px;
+}

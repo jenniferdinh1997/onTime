@@ -1,5 +1,6 @@
 import React from 'react';
 import './Intro.css';
+import { Link } from 'react-router-dom';
 
 export default function Intro() {
     return (
@@ -12,7 +13,7 @@ export default function Intro() {
                 <button>
                     <span className="transition"></span>
                     <span className="gradient"></span>
-                    <span className="label"><a href='/about'>Learn More</a></span>
+                    <span className="label"><Link to='/about'>Learn More</Link></span>
                 </button>
                 <button>
                     <span className="transition"></span>
