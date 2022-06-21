@@ -74,12 +74,14 @@ export default function LoginPage(props) {
             </button>
           </form>
 
+          <div className='error'>
+            {error ? <ErrorMessage error={error} /> : null}
+          </div>
+
           <div className='signup'>
             <p className='member'>Not a member?</p> 
             <Link to='/signup' className='signup-link'>Sign Up</Link>
           </div>
-
-          {error ? <ErrorMessage error={error} /> : null}
         </div>
       </div>
     </>

@@ -89,3 +89,8 @@
     border-top: solid 2px rgba(255, 255, 255, 0.582);
     border-bottom: solid 2px rgba(255, 255, 255, 0.582);
 }
+
+.error {
+    font-size: 0.9em;
+    text-align: center;
+}
