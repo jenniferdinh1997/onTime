@@ -67,18 +67,11 @@ export default function AddRide({ user, handleLogout }) {
         setShowHistory(false);
     }
 
-    //take user back to form to edit ride
-    function handleEditRide(e) {
-        e.preventDefault();
-        setShowForm(true);
-        setShowConfirm(false);
-    }
-
     return (
         <div className='rides'>
             <Header user={user} handleShowHistory={handleShowHistory} handleShowForm={handleShowForm} handleLogout={handleLogout} />
             <AddRideForm handleAddRide={handleAddRide} showForm={showForm} />
-            <RideConfirmation user={user} currentRide={currentRide} handleShowConfirm={handleShowConfirm} showConfirm={showConfirm} handleEditRide={handleEditRide} />
+            <RideConfirmation user={user} currentRide={currentRide} handleShowConfirm={handleShowConfirm} showConfirm={showConfirm} />
             <RideHistory user={user} allRides={allRides} showHistory={showHistory} />
             <Footer />
         </div>

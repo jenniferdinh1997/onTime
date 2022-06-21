@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './RideConfirmation.css';
 import Map from '../Map/Map';
 
-export default function RideConfirmation({ user, currentRide, handleShowConfirm, showConfirm, handleEditRide }) {
+export default function RideConfirmation({ user, currentRide, handleShowConfirm, showConfirm }) {
     return (
         <>
         {showConfirm && (
@@ -19,11 +19,6 @@ export default function RideConfirmation({ user, currentRide, handleShowConfirm,
                     <span className="transition"></span>
                     <span className="gradient"></span>
                     <span className="label">Complete Ride</span>
-                </button>
-                <button onClick={handleEditRide}>
-                    <span className="transition"></span>
-                    <span className="gradient"></span>
-                    <span className="label">Edit Ride</span>
                 </button>
             </div>
         </div>
