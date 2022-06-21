@@ -6,7 +6,7 @@ import ProfileCard from '../../components/ProfileCard/ProfileCard';
 import { useParams } from "react-router-dom";
 import './ProfilePage.css';
 
-export default function ProfilePage() {
+export default function ProfilePage({ handleLogout }) {
     const [error, setError] = useState('');
     const [user, setUser] = useState({});
     const { name } = useParams();
@@ -27,7 +27,7 @@ export default function ProfilePage() {
 
     return (
         <div className='profile-page'>
-            <Header user={user} />
+            <Header user={user} handleLogout={handleLogout} />
             <ProfileCard user={user} />
             <Footer />
         </div>

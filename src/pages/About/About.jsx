@@ -3,10 +3,10 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import './About.css';
 
-export default function About({ user }) {
+export default function About({ user, handleLogout }) {
     return (
         <div className='about-page'>
-            <Header user={user} />
+            <Header user={user} handleLogout={handleLogout} />
             <div className='about1'>
                 <img src={'/about-header.png'} className='about-header' />
                 <h1 className='h1-about'>About Us</h1>

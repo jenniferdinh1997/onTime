@@ -5,10 +5,11 @@ import AddRideForm from '../../components/AddRideForm/AddRideForm';
 import RideConfirmation from '../../components/RideConfirmation/RideConfirmation';
 import RideHistory from '../../components/RideHistory/RideHistory';
 import Footer from '../../components/Footer/Footer';
+import Map from '../../components/Map/Map';
 import * as rideApi from '../../utils/rideApi';
 import './RideDetails.css';
 
-export default function AddRide({ user }) {
+export default function AddRide({ user, handleLogout }) {
     const [currentRide, setCurrentRide] = useState('');
     const [allRides, setAllRides] = useState([]);
     const [error, setError] = useState('');
@@ -75,9 +76,9 @@ export default function AddRide({ user }) {
 
     return (
         <div className='rides'>
-            <Header user={user} handleShowHistory={handleShowHistory} handleShowForm={handleShowForm} />
+            <Header user={user} handleShowHistory={handleShowHistory} handleShowForm={handleShowForm} handleLogout={handleLogout} />
             <AddRideForm handleAddRide={handleAddRide} showForm={showForm} />
-            <RideConfirmation user={user} currentRide={currentRide} handleShowConfirm={handleShowConfirm} showConfirm={showConfirm} handleEditRide = {handleEditRide} />
+            <RideConfirmation user={user} currentRide={currentRide} handleShowConfirm={handleShowConfirm} showConfirm={showConfirm} handleEditRide={handleEditRide} />
             <RideHistory user={user} allRides={allRides} showHistory={showHistory} />
             <Footer />
         </div>

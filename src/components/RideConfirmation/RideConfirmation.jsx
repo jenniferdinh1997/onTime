@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './RideConfirmation.css';
+import Map from '../Map/Map';
 
 export default function RideConfirmation({ user, currentRide, handleShowConfirm, showConfirm, handleEditRide }) {
     return (

@@ -31,13 +31,13 @@ function App() {
           element={<Home user={user} handleLogout={handleLogout} />} />
         <Route 
           path="/trip" 
-          element={<RideDetails user={user} />} /> 
+          element={<RideDetails user={user} handleLogout={handleLogout} />} /> 
         <Route
           path='/:name'
-          element={<ProfilePage user={user} />} />
+          element={<ProfilePage user={user} handleLogout={handleLogout} />} />
         <Route 
           path='/about'
-          element={<About user={user} />} />
+          element={<About user={user} handleLogout={handleLogout} />} />
       </Routes>
     );
   }
