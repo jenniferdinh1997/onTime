@@ -22,7 +22,7 @@ export default function ProfileCard({ user }) {
                 </div>
 
                 <div className='trips'>
-                    <Link to='/trip'>
+                    <Link to='/trip/#history'>
                         <FaCar style={{fontSize: '2em', color: 'gray'}}/>
                         <p>Trips</p>
                     </Link>

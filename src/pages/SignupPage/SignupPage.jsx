@@ -164,6 +164,10 @@ export default function SignUpPage(props) {
             <span className="label">Sign Up</span>
           </button>
         </form>
+
+        <div className='error'>
+          {error ? <ErrorMessage error={error} /> : null}
+        </div>
       </div>
     </>
   );
