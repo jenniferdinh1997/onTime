@@ -1,8 +1,6 @@
 import React from 'react';
 import './Footer.css';
 import {
-    MDBFooter,
-    MDBContainer,
     MDBIcon,
     MDBCol,
     MDBRow,
@@ -10,22 +8,21 @@ import {
 
 export default function Footer() {
     return (
-        <MDBFooter className='text-center' color='white' bgColor='dark'>
-          <MDBContainer className='p-3'>
-            <section className='mb-3'>
-                <a className='btn btn-outline-light btn-floating m-1' href='#!' role='button'>
+        <div className='footer'>
+            <section className='footer-icons'>
+                <a href='#'>
                     <MDBIcon fab icon='facebook-f' />
                 </a>
 
-                <a className='btn btn-outline-light btn-floating m-1' href='#!' role='button'>
+                <a href='#'>
                     <MDBIcon fab icon='twitter' />
                 </a>
 
-                <a className='btn btn-outline-light btn-floating m-1' href='#!' role='button'>
+                <a href='#'>
                     <MDBIcon fab icon='instagram' />
                 </a>
 
-                <a className='btn btn-outline-light btn-floating m-1' href='#!' role='button'>
+                <a href='#'>
                     <MDBIcon fab icon='linkedin-in' />
                 </a>
             </section>
@@ -59,11 +56,10 @@ export default function Footer() {
                 </MDBCol>
               </MDBRow>
             </section>
-          </MDBContainer>
 
         <div className='text-start p-1' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
           <p className='copyright'>© 2022 Copyright onTime</p>
         </div>
-    </MDBFooter>
+    </div>
     )
 }
