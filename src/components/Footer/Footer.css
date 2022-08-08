@@ -4,6 +4,10 @@
     padding: 2% 2% 5px 2%;
 }
 
+.footer a:hover {
+    color: rgba(16, 185, 129, 0.6);
+}
+
 .copyright {
     font-size: 10px;
     color: rgb(136, 136, 136);
@@ -20,4 +24,16 @@
     padding: 1.5%;
     border: white solid 2px;
     border-radius: 50%;
+}
+
+.footer-links {
+    margin: 3em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.company, .products {
+    display: flex;
+    flex-direction: column;
 }

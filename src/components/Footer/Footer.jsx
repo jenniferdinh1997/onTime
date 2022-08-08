@@ -1,10 +1,9 @@
 import React from 'react';
 import './Footer.css';
 import {
-    MDBIcon,
-    MDBCol,
-    MDBRow,
+    MDBIcon
   } from 'mdb-react-ui-kit';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
     return (
@@ -27,34 +26,18 @@ export default function Footer() {
                 </a>
             </section>
 
-            <section className='mb-3'>
-              <MDBRow>
-                <MDBCol lg='3' md='6' className='mb-4 mb-md-0'>
-                  <h5 className='text-uppercase'>Company</h5>
+            <section className='footer-links'>
+              <div className='company'>
+                <h5>COMPANY</h5>
+                <Link to='/about'>About Us</Link>
+                <a href='#'>Careers</a>
+              </div>
 
-                  <ul className='list-unstyled mb-0'>
-                    <li>
-                      <a href='/about' className='text-white'>About Us</a>
-                    </li>
-                    <li>
-                      <a href='#!' className='text-white'>Careers</a>
-                    </li>
-                  </ul>
-                </MDBCol>
-
-                <MDBCol lg='3' md='6' className='mb-4 mb-md-0'>
-                  <h5 className='text-uppercase'>Products</h5>
-
-                  <ul className='list-unstyled mb-0'>
-                    <li>
-                      <a href='#!' className='text-white'>Ride</a>
-                    </li>
-                    <li>
-                      <a href='#!' className='text-white'>Drive</a>
-                    </li>
-                  </ul>
-                </MDBCol>
-              </MDBRow>
+              <div className='products'>
+                <h5>PRODUCTS</h5>
+                <a href='#'>Ride</a>
+                <a href='#'>Drive</a>
+              </div>
             </section>
 
         <div className='text-start p-1' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
