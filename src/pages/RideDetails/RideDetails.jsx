@@ -57,6 +57,7 @@ export default function AddRide({ user, handleLogout }) {
     function handleShowHistory(e) {
         e.preventDefault();
         setShowForm(false);
+        setShowConfirm(false)
         setShowHistory(true);
     }
 
@@ -64,6 +65,7 @@ export default function AddRide({ user, handleLogout }) {
     function handleShowForm(e) {
         e.preventDefault();
         setShowForm(true);
+        setShowConfirm(false)
         setShowHistory(false);
     }
 

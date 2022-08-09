@@ -12,7 +12,7 @@ export default function Header({ user, handleLogout, handleShowHistory, handleSh
                             <Link to='/' style={{fontWeight: '700'}}>onTime</Link>
                             <Link to='/about'>About Us</Link>
                             <Link to='/trip' onClick={handleShowForm}>Ride</Link>
-                            <Link to='/trip/#history' onClick={handleShowHistory}>See History</Link>
+                            <Link to='/trip' onClick={handleShowHistory}>See History</Link>
                         </div>                    
                         
                         <div className='right-nav'>
