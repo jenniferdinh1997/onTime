@@ -5,10 +5,16 @@ import { Link } from 'react-router-dom';
 export default function Intro() {
     return (
     <div className='body'>
-        <div className='content'>
-            <h1>onTime</h1>
-            <h3>Never miss another doctor's appointment</h3>
+        <div className='content-left'>
+            <img 
+                src="/home3.png"
+                alt="Doctor and patient"
+                id="home-3"
+            />
+        </div>
 
+        <div className='content-right'>
+            <h1>Never miss another appointment</h1>
             <div className='buttons'>
                 <button>
                     <span className="transition"></span>

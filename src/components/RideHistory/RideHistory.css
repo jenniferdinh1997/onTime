@@ -9,3 +9,7 @@
     padding: 15px;
     margin: 15px 0px;
 }
+
+.historyCard button {
+    font-size: 1.25rem;
+}

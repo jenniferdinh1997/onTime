@@ -69,12 +69,17 @@ export default function AddRide({ user, handleLogout }) {
         setShowHistory(false);
     }
 
+    //delete a ride
+    function deleteRide(_id) {
+        setAllRides(allRides.filter((ride) => _id !== ride._id))
+    }
+
     return (
         <div className='rides'>
             <Header user={user} handleShowHistory={handleShowHistory} handleShowForm={handleShowForm} handleLogout={handleLogout} />
             <AddRideForm handleAddRide={handleAddRide} showForm={showForm} />
             <RideConfirmation user={user} currentRide={currentRide} handleShowConfirm={handleShowConfirm} showConfirm={showConfirm} />
-            <RideHistory user={user} allRides={allRides} showHistory={showHistory} />
+            <RideHistory user={user} allRides={allRides} showHistory={showHistory} deleteRide={deleteRide} />
             <Footer />
         </div>
     )
