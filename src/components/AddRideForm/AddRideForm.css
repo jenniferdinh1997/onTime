@@ -1,10 +1,8 @@
 .card {
     padding: 35px 35px 20px 35px;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    width: 40%;
+    height: 600px;
+    margin: 50px 50px 50px 80px;
     box-shadow: 0 1px 25px rgba(0,0,0,0.2);
 }
 
@@ -38,4 +36,20 @@
 
 .addRideForm > button {
     margin-top: 15px;
+}
+
+#submit-add-ride-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-style: none;
+    border-radius: 15px;
+    background-color: #cae9ff;
+    color: #5fa8d3;
+    font-weight: 600;
+    padding: 5px 20px;
+}
+
+#submit-add-ride-btn:hover {
+    background-color: #dcf0fe;
 }

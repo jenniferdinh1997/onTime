@@ -3,58 +3,45 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
-import RideDetails from '../RideDetails/RideDetails';
-import ProfilePage from '../ProfilePage/ProfilePage';
-import Home from '../Home/Home';
-import About from '../About/About';
+import RideDetails from "../RideDetails/RideDetails";
+import ProfilePage from "../ProfilePage/ProfilePage";
+import Home from "../Home/Home";
+import About from "../About/About";
+import RideHistory from "../RideHistory/RideHistory";
 import userService from "../../utils/userService";
 
 function App() {
-  const [user, setUser] = useState(userService.getUser()); // getUser decodes our JWT token, into a javascript object
-  // this object corresponds to the jwt payload which is defined in the server signup or login function that looks like
-  // this  const token = createJWT(user); // where user was the document we created from mongo
-
-  function handleSignUpOrLogin() {
-    setUser(userService.getUser()); // getting the user from localstorage decoding the jwt
-  }
+  const [user, setUser] = useState(userService.getUser());
 
   function handleLogout() {
     userService.logout();
     setUser(null);
   }
 
-  if (user) {
-    return (
-      <Routes>
-        <Route
-          path='/'
-          element={<Home user={user} handleLogout={handleLogout} />} />
-        <Route 
-          path="/trip" 
-          element={<RideDetails user={user} handleLogout={handleLogout} />} /> 
-        <Route
-          path='/:name'
-          element={<ProfilePage user={user} handleLogout={handleLogout} />} />
-        <Route 
-          path='/about'
-          element={<About user={user} handleLogout={handleLogout} />} />
-      </Routes>
-    );
-  }
-
   return (
     <Routes>
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/signup" element={<SignupPage />} />
       <Route
-        path="/login"
-        element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
+        path="/"
+        element={<Home user={user} handleLogout={handleLogout} />}
       />
       <Route
-        path="/signup"
-        element={<SignupPage handleSignUpOrLogin={handleSignUpOrLogin} />}
+        path="/trip"
+        element={<RideDetails user={user} handleLogout={handleLogout} />}
       />
-      <Route 
-        path="/*" 
-        element={<Navigate to="/login" />} />
+      <Route
+        path="/trip/history"
+        element={<RideHistory user={user} handleLogout={handleLogout} />}
+      />
+      <Route
+        path="/:name"
+        element={<ProfilePage user={user} handleLogout={handleLogout} />}
+      />
+      <Route
+        path="/about"
+        element={<About user={user} handleLogout={handleLogout} />}
+      />
     </Routes>
   );
 }

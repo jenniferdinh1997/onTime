@@ -16,12 +16,12 @@ export default function Intro() {
         <div className='content-right'>
             <h1>Never miss another appointment</h1>
             <div className='buttons'>
-                <button>
+                <button id="about-btn">
                     <span className="transition"></span>
                     <span className="gradient"></span>
                     <span className="label"><Link to='/about'>Learn More</Link></span>
                 </button>
-                <button>
+                <button id="about-btn">
                     <span className="transition"></span>
                     <span className="gradient"></span>
                     <span className="label">Sign Up to Drive</span>

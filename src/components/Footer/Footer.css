@@ -1,5 +1,5 @@
 .footer {
-    background-color: black;
+    background-color: #bad6e4;
     color: white;
     padding: 2% 2% 5px 2%;
 }
@@ -9,8 +9,7 @@
 }
 
 .copyright {
-    font-size: 10px;
-    color: rgb(136, 136, 136);
+    font-size: 15px;
     margin: 0 7px;
 }
 

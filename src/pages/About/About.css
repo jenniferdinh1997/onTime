@@ -24,14 +24,15 @@
     color: black;
 }
 
-.about-p2 {
-    font-size: 0.8em;
+.about-p2, .about-p3 {
+    font-size: 15px;
 }
 
 .about2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-bottom: 20px;
+    margin-right: 60px;
 }
 
 .about-h2 {
@@ -43,6 +44,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     margin-bottom: 20px;
+    margin-left: 60px;
 }
 
 .about-p3, .about-h3 {
@@ -60,14 +62,10 @@
 }
 
 .about3img {
-    width: 85%;
+    width: 80%;
     grid-column-start: 2;
     grid-column-end: 3;
-    margin-left: 45px;
-}
-
-.about-p3 {
-    font-size: 0.8em;
+    margin: 0px 60px;
 }
 
 .about-h3 {

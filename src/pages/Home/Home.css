@@ -10,33 +10,38 @@
 .description {
     display: grid;
     grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-rows: 60px 1fr;
     font-size: 1rem;
-    background-color: rgba(16, 185, 129, 0.085);
+    background-color: #cde8f5;
 }
 
-.whole-body > h4 {
+#description-header {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
     font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 2rem;
-    background-color: rgba(16, 185, 129, 0.085);
+    font-size: 30px;
     color: black;
     text-align: center;
-    margin: 0;
     padding: 24px;
 }
 
 .desc-left {
-    margin: 0 10px 10px 10px;
+    margin: 20px 10px;
     grid-column-start: 2;
     grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
     color: black;
-
 }
 
 .desc-right {
-    margin: 0 10px 10px 10px;
+    margin: 20px 10px;
     grid-column-start: 3;
     grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
     color: black;
 }
 

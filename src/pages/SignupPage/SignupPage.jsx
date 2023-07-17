@@ -7,7 +7,7 @@ import './SignupPage.css';
 
 export default function SignUpPage(props) {
   const [error, setError] = useState('');
-  const [state, setState] = useState({
+  const [user, setUser] = useState({
     name: '',
     dob: '',
     email: '',
@@ -16,39 +16,42 @@ export default function SignUpPage(props) {
     accessibility: '',
     password: ''
   });
-  const [file, setFile] = useState('');
+  // const [file, setFile] = useState('');
   const navigate = useNavigate();
 
-  //submits contents of each individual section on the form
+  const [authRequest, setAuthRequest] = useState({
+    email: "",
+    password: "",
+  });
+
   function handleChange(e) {
-    setState({
-      ...state,
+    setUser({
+      ...user,
       [e.target.name]: e.target.value
-    })
+    });
+    setAuthRequest({...authRequest, [e.target.name]: e.target.value});
   }
 
-  //submits the user's avatar photo
-  function handleFileInput(e) {
-    setFile(e.target.files[0]) //places our uploaded file in the first place of files array
-  }
+  // function handleFileInput(e) {
+  //   setFile(e.target.files[0]) //places our uploaded file in the first place of files array
+  // }
 
   //submits entire contents of the form
-  async function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData()
-    formData.append('photo', file)
+    // const formData = new FormData()
+    // formData.append('photo', file)
 
-    for (let fieldName in state) {
-      formData.append(fieldName, state[fieldName])
-    }
-
-    try {
-      await userService.signup(formData)
-      props.handleSignUpOrLogin();
-      navigate('/')
-    } catch (err) {
-      setError(err.message)
-    }
+    // for (let fieldName in state) {
+    //   formData.append(fieldName, state[fieldName])
+    // }
+    await userService.signup(user).then((res) => {
+      localStorage.setItem("jwttoken", JSON.stringify(res));
+    });
+    await userService.login(authRequest).then((res) => {
+      localStorage.setItem("user", JSON.stringify(res));
+    });
+    navigate("/");
   }
 
   return (
@@ -70,7 +73,7 @@ export default function SignUpPage(props) {
             <input
               type='text' 
               name='name' 
-              value={state.name}
+              value={user.name}
               className='input'
               onChange={handleChange} />
           </div>
@@ -80,7 +83,7 @@ export default function SignUpPage(props) {
             <input
               type='date' 
               name='dob' 
-              value={state.dob}
+              value={user.dob}
               className='input'
               onChange={handleChange} />
           </div>
@@ -90,7 +93,7 @@ export default function SignUpPage(props) {
             <input
               type='tel' 
               name='phone'
-              value={state.phone} 
+              value={user.phone} 
               className='input'
               onChange={handleChange} />
           </div>
@@ -100,7 +103,7 @@ export default function SignUpPage(props) {
             <input
               type='text' 
               name='email' 
-              value={state.email} 
+              value={user.email} 
               className='input'
               onChange={handleChange} />
           </div>
@@ -110,7 +113,7 @@ export default function SignUpPage(props) {
             <input
               type='text' 
               name='language' 
-              value={state.language} 
+              value={user.language} 
               className='input'
               onChange={handleChange} />
           </div>
@@ -125,7 +128,7 @@ export default function SignUpPage(props) {
                 id='yes'
                 className='input'
                 onChange={handleChange} />
-              <label for='yes'>Yes</label>
+              <label htmlFor='yes'>Yes</label>
               <input
                 type='radio'
                 name='accessibility' 
@@ -133,7 +136,7 @@ export default function SignUpPage(props) {
                 id='no' 
                 className='input'
                 onChange={handleChange}  />
-              <label for='no'>No</label>
+              <label htmlFor='no'>No</label>
             </div>
           </div>
 
@@ -142,12 +145,12 @@ export default function SignUpPage(props) {
             <input
               type='password' 
               name='password' 
-              value={state.password} 
+              value={user.password} 
               className='input'
               onChange={handleChange} />
           </div>
 
-          <div className='uploadSU'>
+          {/* <div className='uploadSU'>
             <label className='formLabel'>Upload Photo: </label>
             <label className='uploadLabel' for='upload-btn'>Choose File</label>
             <input
@@ -156,7 +159,7 @@ export default function SignUpPage(props) {
               id='upload-btn'
               onChange={handleFileInput} 
               hidden />
-          </div>
+          </div> */}
 
           <button type='submit'>
             <span className="transition"></span>

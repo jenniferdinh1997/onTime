@@ -40,7 +40,7 @@ export default function Footer() {
               </div>
             </section>
 
-        <div className='text-start p-1' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+        <div className='text-start p-1'>
           <p className='copyright'>© 2022 Copyright onTime</p>
         </div>
     </div>

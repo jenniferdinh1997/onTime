@@ -1,28 +1,14 @@
-import tokenService from './tokenService';
+import tokenService from "./tokenService";
+import axios from "axios";
 
-const BASE_URL = '/api/rides/';
+const BASE_URL = "/api/rides/";
 
-export function create(ride) {
-    return fetch(BASE_URL + 'trip', {
-        method: 'POST',
-        body: ride,
-        headers: {
-            'Authorization': 'Bearer ' + tokenService.getToken()
-        }
-    }).then(res => {
-        if(res.ok) return res.json();
-        throw new Error('Bad Credentials! CHECK THE SERVER TERMINAL!')
-    })
+export const addRide = async (ride) => {
+  const response = await axios.post(`${BASE_URL}/addTrip`, ride);
+  return response.data;
 }
 
-export function getAll() {
-    return fetch(BASE_URL + 'trip', {
-      headers: {
-        'Authorization': 'Bearer ' + tokenService.getToken()
-      }
-    })
-    .then(res => {
-      if(res.ok) return res.json();
-      throw new Error('Bad Credentials! CHECK THE SERVER TERMINAL!')
-    })
-  }
+export const getRides = async () => {
+  const response = await axios.get(`${BASE_URL}/getTrips`);
+  return response.data;
+}

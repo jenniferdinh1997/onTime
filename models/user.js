@@ -1,71 +1,83 @@
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
-
-const SALT_ROUNDS = 6;
 
 const userSchema = new mongoose.Schema({
-  name: 
-    {type: String, 
-    required: true},
-  dob: 
-    {type: Date},
-  email: 
-    {type: String, 
+  name: { 
+    type: String, 
+    required: true 
+  },
+  dob: { 
+    type: Date ,
+    required: true
+  },
+  email: { 
+    type: String, 
     required: true, 
     lowercase: true, 
-    unique: true},
-  phone: 
-    {type: Number},
-  language: 
-    {type: String},
-  accessibility: 
-    {type: Boolean},
-  password: 
-    {type: String},
-  photoUrl: 
-    {type: String}, // string from aws!
-});
-
-userSchema.set("toJSON", {
-  transform: function (doc, ret) {
-    // remove the password property when serializing doc to JSON
-    delete ret.password;
-    return ret;
+    unique: true 
   },
-});
-/// in controller
-
-// this is if you populate the user
-userSchema.set("toObject", {
-  transform: (doc, ret, opt) => {
-    delete ret.password;
-    return ret;
+  phone: { 
+    type: Number 
   },
+  language: { 
+    type: String,
+    default: "English"
+  },
+  accessibility: { 
+    type: Boolean 
+  },
+  password: { 
+    type: String,
+    required: true
+  },
+  // photoUrl: { 
+  //   type: String 
+  // },
+  date: {
+    type: Date,
+    default: Date.now()
+  }
 });
 
-// DO NOT DEFINE instance methods with arrow functions,
-// they prevent the binding of this
-userSchema.pre("save", function (next) {
-  // 'this' will be set to the current document
-  const user = this;
-  // check to see if the user has been modified, if not proceed
-  // in the middleware chain
-  if (!user.isModified("password")) return next();
-  // password has been changed - salt and hash it
-  bcrypt.hash(user.password, SALT_ROUNDS, function (err, hash) {
-    if (err) return next(err);
-    // replace the user provided password with the hash
-    user.password = hash;
-    next();
-  });
-});
+// userSchema.set("toJSON", {
+//   transform: function (doc, ret) {
+//     // remove the password property when serializing doc to JSON
+//     delete ret.password;
+//     return ret;
+//   },
+// });
+// /// in controller
 
-userSchema.methods.comparePassword = function (tryPassword, cb) {
-  bcrypt.compare(tryPassword, this.password, function (err, isMatch) {
-    if (err) return cb(err);
+// // this is if you populate the user
+// userSchema.set("toObject", {
+//   transform: (doc, ret, opt) => {
+//     delete ret.password;
+//     return ret;
+//   },
+// });
 
-    cb(null, isMatch);
-  });
-};
+// // DO NOT DEFINE instance methods with arrow functions,
+// // they prevent the binding of this
+// userSchema.pre("save", function (next) {
+//   // 'this' will be set to the current document
+//   const user = this;
+//   // check to see if the user has been modified, if not proceed
+//   // in the middleware chain
+//   if (!user.isModified("password")) return next();
+//   // password has been changed - salt and hash it
+//   bcrypt.hash(user.password, SALT_ROUNDS, function (err, hash) {
+//     if (err) return next(err);
+//     // replace the user provided password with the hash
+//     user.password = hash;
+//     next();
+//   });
+// });
+
+// userSchema.methods.comparePassword = function (tryPassword, cb) {
+//   bcrypt.compare(tryPassword, this.password, function (err, isMatch) {
+//     if (err) return cb(err);
+
+//     cb(null, isMatch);
+//   });
+// };
 
 module.exports = mongoose.model("User", userSchema);

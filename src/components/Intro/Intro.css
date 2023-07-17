@@ -21,12 +21,12 @@
     justify-content: center;
 }
 
-button {
+#about-btn {
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 1.5rem;
     padding: 0.4em;;
     font-weight: 500;
-    background: black;
+    background-color: #1b4965;
     color: white;
     border: none;
     position: relative;
@@ -35,26 +35,16 @@ button {
     margin: 10px;
    }
    
-.gradient {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    border-radius: 0.6em;
-    margin-top: -0.25em;
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
-   }
-   
 .label {
     position: relative;
     top: -1px;
+    padding: 0px 15px;
    }
    
 .transition {
     transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
     transition-duration: 500ms;
-    background-color: rgba(16, 185, 129, 0.6);
+    background-color: #5fa8d3;
     border-radius: 9999px;
     width: 0;
     height: 0;
@@ -73,11 +63,10 @@ button:active {
     transform: scale(0.97);
    }
 
-h1 {
-    font-family: 'Roboto Condensed', sans-serif;
+.content-right h1 {
+    font-family: "Cambria";
     text-align: left;
-    font-size: 3.5rem;
-    font-weight: 800;
+    font-size: 50px;
     color: black;
 }
 

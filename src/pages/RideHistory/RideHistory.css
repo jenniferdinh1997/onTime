@@ -1,0 +1,12 @@
+.ride-history-container {
+    width: 80%;
+    margin: 70px auto;
+}
+
+.ride-history-container_rides {
+    margin-top: 30px;
+}
+
+#ride-history-container_ride {
+    padding: 15px 0px;
+}
