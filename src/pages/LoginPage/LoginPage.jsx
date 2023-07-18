@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./LoginPage.css";
 import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import userService from "../../utils/userService";
 import { useNavigate, Link } from "react-router-dom";
 
-export default function LoginPage(props) {
+export default function LoginPage({ setUser }) {
   const [error, setError] = useState("");
   const [state, setState] = useState({
     email: "",
@@ -24,6 +25,7 @@ export default function LoginPage(props) {
     e.preventDefault();
     await userService.login(state).then((res) => {
       localStorage.setItem("user", JSON.stringify(res));
+      setUser(res);
     });
     navigate("/");
   };
@@ -33,10 +35,6 @@ export default function LoginPage(props) {
       <Header />
       <div className="loginPage">
         <div className="login-border"></div>
-        <div className="mainLogo">
-          <h1>onTime</h1>
-          <img src={"/OnTime.png"} />
-        </div>
 
         <div className="loginCard">
           <h3>Get Started</h3>
@@ -68,11 +66,11 @@ export default function LoginPage(props) {
                 required
               />
             </div>
-            <button type="submit">
-              <span className="transition"></span>
-              <span className="gradient"></span>
-              <span className="label">Log In</span>
-            </button>
+            <div className="login-container_btn">
+              <button type="submit" id="login-page_login-btn">
+                Log In
+              </button>
+            </div>
           </form>
 
           <div className="error">
@@ -87,6 +85,7 @@ export default function LoginPage(props) {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

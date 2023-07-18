@@ -13,24 +13,37 @@ export default function About({ user, handleLogout }) {
       </div>
 
       <div className="about2">
-        <h4 className="about-h2">The Inspiration</h4>
-        <p className="about-p2">
-          Our founder had previously worked as a medical assistant at a clinic
-          and noticed that many of the patients would either be late or cancel
-          their appointments due to missing the bus, not having any family
-          members to provide rides, or miscommunicating with their rideshare
-          drivers.
-        </p>
+        <img
+          src={"/about2.jpg"}
+          className="about2img"
+        />
+        <div className="about2-text-container">
+          <h4>The Inspiration</h4>
+          <p>
+            Our founder had previously worked as a medical assistant at a clinic
+            and noticed that many of the patients would either be late or cancel
+            their appointments due to missing the bus, not having any family
+            members to provide rides, or miscommunicating with their rideshare
+            drivers.
+          </p>
+          <p>
+            Not everyone knows to ask for special accommodations and language
+            barriers can lead to an inconvenient experience for both the driver
+            and passenger.
+          </p>
+        </div>
       </div>
 
       <div className="about3">
-        <img src={"/about3.png"} className="about3img" />
-        <div className="about3text">
-          <h4 className="about-h3">The Idea</h4>
-          <p className="about-p3">
+        <div className="about3-text-container">
+          <h4>The Idea</h4>
+          <p>
             How do we get these patients to their doctor's appointments in the
-            most efficient and patient friendly way possible? Enter onTime.
-            onTime is a rideshare app that matches patients specifically to a
+            most efficient and patient friendly way possible? Enter Healthshare.
+            A rideshare for healthcare. 
+          </p>
+          <p>
+            Healthshare is a rideshare app that matches patients specifically to a
             driver that speaks the same language and has a wheelchair accessible
             vehicle if needed. Gone are the days where language barriers prevent
             patients from getting to their destination. Patients will no longer
@@ -39,6 +52,7 @@ export default function About({ user, handleLogout }) {
             special accommodations to a car that fits exactly what they need.
           </p>
         </div>
+        <img src={"/about3.png"} className="about3img" />
       </div>
       <Footer />
     </div>

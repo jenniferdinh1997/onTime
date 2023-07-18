@@ -41,7 +41,7 @@ export default function Footer() {
             </section>
 
         <div className='text-start p-1'>
-          <p className='copyright'>© 2022 Copyright onTime</p>
+          <p className='copyright'>© 2022 Copyright Healthshare</p>
         </div>
     </div>
     )

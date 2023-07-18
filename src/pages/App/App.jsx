@@ -19,30 +19,40 @@ function App() {
   }
 
   return (
-    <Routes>
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/signup" element={<SignupPage />} />
-      <Route
-        path="/"
-        element={<Home user={user} handleLogout={handleLogout} />}
-      />
-      <Route
-        path="/trip"
-        element={<RideDetails user={user} handleLogout={handleLogout} />}
-      />
-      <Route
-        path="/trip/history"
-        element={<RideHistory user={user} handleLogout={handleLogout} />}
-      />
-      <Route
-        path="/:name"
-        element={<ProfilePage user={user} handleLogout={handleLogout} />}
-      />
-      <Route
-        path="/about"
-        element={<About user={user} handleLogout={handleLogout} />}
-      />
-    </Routes>
+    <>
+      {user ? (
+        <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route
+            path="/"
+            element={<Home user={user} handleLogout={handleLogout} />}
+          />
+          <Route
+            path="/trip"
+            element={<RideDetails user={user} handleLogout={handleLogout} />}
+          />
+          <Route
+            path="/trip/history"
+            element={<RideHistory user={user} handleLogout={handleLogout} />}
+          />
+          <Route
+            path="/:name"
+            element={<ProfilePage user={user} handleLogout={handleLogout} />}
+          />
+          <Route
+            path="/about"
+            element={<About user={user} handleLogout={handleLogout} />}
+          />
+        </Routes>
+      ) : (
+        <Routes>
+          <Route path="/login" element={<LoginPage setUser={setUser}/>} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/*" element={<Navigate to="/login" />} />
+        </Routes>
+      )}
+    </>
   );
 }
 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Header from '../../components/Header/Header';
+import Footer from "../../components/Footer/Footer";
 import userService from "../../utils/userService";
 import { useNavigate } from "react-router-dom";
 import './SignupPage.css';
@@ -160,18 +161,18 @@ export default function SignUpPage(props) {
               onChange={handleFileInput} 
               hidden />
           </div> */}
-
-          <button type='submit'>
-            <span className="transition"></span>
-            <span className="gradient"></span>
-            <span className="label">Sign Up</span>
-          </button>
+          <div className="submitSU">
+            <button type='submit' id="signup-form_btn">
+              Sign Up
+            </button>
+          </div>
         </form>
 
         <div className='error'>
           {error ? <ErrorMessage error={error} /> : null}
         </div>
       </div>
+      <Footer />
     </>
   );
 }
