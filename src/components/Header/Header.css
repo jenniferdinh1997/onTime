@@ -1,5 +1,5 @@
 nav {
-    background-color: #bad6e4;
+    background-color: white;
     padding: 3px;
     display: flex;
     flex-direction: row;
@@ -19,7 +19,7 @@ nav {
     float: right;
     padding: 8px;
     font-size: 25px;
-    color: white;
+    color: black;
 }
 
 .right-nav a:hover {

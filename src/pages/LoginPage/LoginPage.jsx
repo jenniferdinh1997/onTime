@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./LoginPage.css";
-import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import userService from "../../utils/userService";
@@ -32,10 +31,19 @@ export default function LoginPage({ setUser }) {
 
   return (
     <>
-      <Header />
       <div className="loginPage">
-        <div className="login-border"></div>
+        <nav className="login-nav-container">
+          <div className="login-nav-left">
+            <Link to="/">
+              <img src="/logo.png" className="header-logo" />
+            </Link>
+          </div>
 
+          <div className="login-nav-right">
+            <Link to="/login">Log In</Link>
+            <Link to="/signup">Sign Up</Link>
+          </div>
+        </nav>
         <div className="loginCard">
           <h3>Get Started</h3>
           <form
