@@ -1,5 +1,8 @@
 nav {
-    background-color: white;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background: transparent;
     padding: 3px;
     display: flex;
     flex-direction: row;
@@ -20,10 +23,7 @@ nav {
     padding: 8px;
     font-size: 25px;
     color: black;
-}
-
-.right-nav a:hover {
-    color: black;
+    font-family: "Cambria";
 }
 
 .nav-avatar {
@@ -46,14 +46,15 @@ nav {
     margin-right: 30px;
     font-size: 25px;
     color: white;
-}
-
-.left-nav a:hover {
-    color: black;
+    font-family: "Cambria";
 }
 
 .header-logo {
     width: 150px;
     height: 150px;
     padding: 15px 0px;
+}
+
+.left-nav a:hover, .right-nav a:hover {
+    color: white;
 }

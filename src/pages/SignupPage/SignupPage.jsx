@@ -58,97 +58,110 @@ export default function SignUpPage(props) {
   return (
     <>
       <Header />
-      <div className='signupCard'>
-        <div className='side-blurb'>
-          <h1>Never miss another doctor's appointment</h1>
-          <ul>
-            <li>Top Notch Care</li>
-            <li>Driver-Passenger Compatibility</li>
-            <li>Minimal Wait Times</li>
-          </ul>
+      <div className="signupCard">
+        <div className="side-blurb">
+          <div className="side-blurb-container">
+            <img src="/signup.png" id="signup-page_image" />
+            <div id="side-blurb_text">
+              <h1>Never miss another doctor's appointment</h1>
+              <ul>
+                <li>Top Notch Care</li>
+                <li>Driver-Passenger Compatibility</li>
+                <li>Minimal Wait Times</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <form autoComplete='off' onSubmit={handleSubmit} className='signupForm'>
+        <form autoComplete="off" onSubmit={handleSubmit} className="signupForm">
           <h3>Get Started</h3>
-          <div className='nameSU'>
-            <label className='formLabel'>Name (required)</label>
+          <div className="nameSU">
+            <label className="formLabel">Name (required)</label>
             <input
-              type='text' 
-              name='name' 
+              type="text"
+              name="name"
               value={user.name}
-              className='input'
-              onChange={handleChange} />
+              className="input"
+              onChange={handleChange}
+            />
           </div>
 
-          <div className='dobSU'>
-            <label className='formLabel'>Date of Birth</label>
+          <div className="dobSU">
+            <label className="formLabel">Date of Birth</label>
             <input
-              type='date' 
-              name='dob' 
+              type="date"
+              name="dob"
               value={user.dob}
-              className='input'
-              onChange={handleChange} />
+              className="input"
+              onChange={handleChange}
+            />
           </div>
 
-          <div className='phoneSU'>
-            <label className='formLabel'>Phone Number</label>
+          <div className="phoneSU">
+            <label className="formLabel">Phone Number</label>
             <input
-              type='tel' 
-              name='phone'
-              value={user.phone} 
-              className='input'
-              onChange={handleChange} />
+              type="tel"
+              name="phone"
+              value={user.phone}
+              className="input"
+              onChange={handleChange}
+            />
           </div>
 
-          <div className='emailSU'>
-            <label className='formLabel'>Email (required)</label>
+          <div className="emailSU">
+            <label className="formLabel">Email (required)</label>
             <input
-              type='text' 
-              name='email' 
-              value={user.email} 
-              className='input'
-              onChange={handleChange} />
+              type="text"
+              name="email"
+              value={user.email}
+              className="input"
+              onChange={handleChange}
+            />
           </div>
 
-          <div className='langSU'>
-            <label className='formLabel'>Language</label>
+          <div className="langSU">
+            <label className="formLabel">Language</label>
             <input
-              type='text' 
-              name='language' 
-              value={user.language} 
-              className='input'
-              onChange={handleChange} />
+              type="text"
+              name="language"
+              value={user.language}
+              className="input"
+              onChange={handleChange}
+            />
           </div>
 
-          <div className='accSU'>
-            <label className='formLabel'>Accessibility Issues</label>
-            <div className='radio'>
+          <div className="accSU">
+            <label className="formLabel">Accessibility Issues</label>
+            <div className="radio">
               <input
-                type='radio'
-                name='accessibility' 
-                value='yes'
-                id='yes'
-                className='input'
-                onChange={handleChange} />
-              <label htmlFor='yes'>Yes</label>
+                type="radio"
+                name="accessibility"
+                value="yes"
+                id="yes"
+                className="input"
+                onChange={handleChange}
+              />
+              <label htmlFor="yes">Yes</label>
               <input
-                type='radio'
-                name='accessibility' 
-                value='no'
-                id='no' 
-                className='input'
-                onChange={handleChange}  />
-              <label htmlFor='no'>No</label>
+                type="radio"
+                name="accessibility"
+                value="no"
+                id="no"
+                className="input"
+                onChange={handleChange}
+              />
+              <label htmlFor="no">No</label>
             </div>
           </div>
 
-          <div className='pwSU'>
-            <label className='formLabel'>Password (required)</label>
+          <div className="pwSU">
+            <label className="formLabel">Password (required)</label>
             <input
-              type='password' 
-              name='password' 
-              value={user.password} 
-              className='input'
-              onChange={handleChange} />
+              type="password"
+              name="password"
+              value={user.password}
+              className="input"
+              onChange={handleChange}
+            />
           </div>
 
           {/* <div className='uploadSU'>
@@ -162,13 +175,13 @@ export default function SignUpPage(props) {
               hidden />
           </div> */}
           <div className="submitSU">
-            <button type='submit' id="signup-form_btn">
+            <button type="submit" id="signup-form_btn">
               Sign Up
             </button>
           </div>
         </form>
 
-        <div className='error'>
+        <div className="error">
           {error ? <ErrorMessage error={error} /> : null}
         </div>
       </div>

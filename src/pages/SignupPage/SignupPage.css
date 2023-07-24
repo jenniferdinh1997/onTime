@@ -1,20 +1,24 @@
 .signupCard {
-    width: 80%;
-    margin: 70px auto;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: row;
+    background-color: #bad6e4;
 }
 
 .signupForm {
+    width: 400px;
+    margin: 80px auto;
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: repeat(8, 1fr);
-    background-color: #bad6e4;
+    grid-template-rows: repeat(7, 1fr);
+    background-color: white;
     border-radius: 25px;
-    padding: 25px;
+    padding: 30px;
+    border: 2px solid #cae9ff;
 }
 
-form > h3 {
+.signupform > h3 {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
@@ -102,11 +106,15 @@ form > h3 {
     align-items: center;
     border-style: none;
     border-radius: 15px;
-    background-color: white;
+    background-color: #cae9ff;
     color: #5fa8d3;
     font-weight: 600;
     padding: 5px 30px;
     font-size: 18px;
+}
+
+#signup-form_btn:hover {
+    background-color: #dcf0fe;
 }
 
 input[type='radio'] {
@@ -127,18 +135,46 @@ input[type='radio'] {
 }
 
 .side-blurb {
-    color: black;
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.side-blurb > h1 {
+.side-blurb-container {
+    border: 2px solid #cae9ff;
+    height: 45%;
+    margin-left: 50px;
+    background-color: white;
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+#side-blurb_text {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+#side-blurb_text h1 {
     color: black;
+    font-size: 25px;
     margin-bottom: 20px;
 }
 
-li {
+#side-blurb_text li {
     padding: 10px;
-    font-size: 18px;
+    font-size: 16px;
+}
+
+#signup-page_image {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    width: 100%;
+    height: 100%;
 }

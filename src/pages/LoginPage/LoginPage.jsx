@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./LoginPage.css";
-import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header/Header";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import userService from "../../utils/userService";
 import { useNavigate, Link } from "react-router-dom";
@@ -32,18 +32,7 @@ export default function LoginPage({ setUser }) {
   return (
     <>
       <div className="loginPage">
-        <nav className="login-nav-container">
-          <div className="login-nav-left">
-            <Link to="/">
-              <img src="/logo.png" className="header-logo" />
-            </Link>
-          </div>
-
-          <div className="login-nav-right">
-            <Link to="/login">Log In</Link>
-            <Link to="/signup">Sign Up</Link>
-          </div>
-        </nav>
+      <Header />
         <div className="loginCard">
           <h3>Get Started</h3>
           <form
@@ -93,7 +82,6 @@ export default function LoginPage({ setUser }) {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }
