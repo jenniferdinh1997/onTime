@@ -1,16 +1,17 @@
 .footer {
-    background: transparent;
+    background-color: #cae9ff;
     color: black;
     padding: 2% 2% 5px 2%;
 }
 
 .footer a:hover {
-    color: rgba(16, 185, 129, 0.6);
+    color: #5fa8d3;;
 }
 
-.copyright {
+#copyright {
     font-size: 15px;
     margin: 0 7px;
+    color: black;
 }
 
 .footer-icons {
@@ -27,7 +28,6 @@
 }
 
 .footer-links {
-    margin: 3em;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -36,4 +36,9 @@
 .company, .products {
     display: flex;
     flex-direction: column;
+    color: black;
+}
+
+.company a, .products a {
+    color: black;
 }

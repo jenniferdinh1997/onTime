@@ -35,13 +35,13 @@ export default function Footer() {
 
               <div className='products'>
                 <h5>PRODUCTS</h5>
-                <a href='#'>Ride</a>
+                <a href='/trip'>Ride</a>
                 <a href='#'>Drive</a>
               </div>
             </section>
 
         <div className='text-start p-1'>
-          <p className='copyright'>© 2022 Copyright Healthshare</p>
+          <p id="copyright">© 2022 Copyright Healthshare</p>
         </div>
     </div>
     )

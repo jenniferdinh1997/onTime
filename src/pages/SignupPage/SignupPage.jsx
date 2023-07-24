@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Header from '../../components/Header/Header';
-import Footer from "../../components/Footer/Footer";
 import userService from "../../utils/userService";
 import { useNavigate } from "react-router-dom";
 import './SignupPage.css';
@@ -185,7 +184,6 @@ export default function SignUpPage(props) {
           {error ? <ErrorMessage error={error} /> : null}
         </div>
       </div>
-      <Footer />
     </>
   );
 }
