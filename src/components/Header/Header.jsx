@@ -9,7 +9,7 @@ export default function Header({ handleLogout, handleShowForm }) {
 
   if (user) {
     return (
-      <nav>
+      <div className="header-container">
         <div className="left-nav">
           <Link to="/">
             <img src="/logo.png" className="header-logo" />
@@ -28,12 +28,12 @@ export default function Header({ handleLogout, handleShowForm }) {
             Log Out
           </Link>
         </div>
-      </nav>
+      </div>
     );
   }
 
   return (
-    <nav>
+    <div className="header-container">
       <div className="left-nav">
         <Link to="/">
           <img src="/logo.png" className="header-logo" />
@@ -44,6 +44,6 @@ export default function Header({ handleLogout, handleShowForm }) {
         <Link to="/login">Log In</Link>
         <Link to="/signup">Sign Up</Link>
       </div>
-    </nav>
+    </div>
   );
 }

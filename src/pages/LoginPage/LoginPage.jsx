@@ -32,7 +32,18 @@ export default function LoginPage({ setUser }) {
   return (
     <>
       <div className="loginPage">
-      <Header />
+        <div className="login-header-container">
+          <div className="left-nav">
+            <Link to="/">
+              <img src="/logo.png" className="header-logo" />
+            </Link>
+          </div>
+
+          <div className="right-nav">
+            <Link to="/login">Log In</Link>
+            <Link to="/signup">Sign Up</Link>
+          </div>
+        </div>
         <div className="loginCard">
           <h3>Get Started</h3>
           <form

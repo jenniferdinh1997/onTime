@@ -1,6 +1,4 @@
-nav {
-    position: fixed;
-    top: 0px;
+.header-container {
     width: 100%;
     background: transparent;
     padding: 5px;

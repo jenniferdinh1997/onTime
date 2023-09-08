@@ -1,20 +1,23 @@
 import React, { useState } from "react";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
-import Header from '../../components/Header/Header';
+import Header from "../../components/Header/Header";
 import userService from "../../utils/userService";
-import { useNavigate } from "react-router-dom";
-import './SignupPage.css';
+import { useNavigate, Link } from "react-router-dom";
+import "./SignupPage.css";
+import { GiHealthCapsule } from "react-icons/gi";
+import { MdOutlineDriveEta } from "react-icons/md";
+import { GiTimeBomb } from "react-icons/gi";
 
 export default function SignUpPage(props) {
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [user, setUser] = useState({
-    name: '',
-    dob: '',
-    email: '',
-    phone: '',
-    language: '',
-    accessibility: '',
-    password: ''
+    name: "",
+    dob: "",
+    email: "",
+    phone: "",
+    language: "",
+    accessibility: "",
+    password: "",
   });
   // const [file, setFile] = useState('');
   const navigate = useNavigate();
@@ -27,9 +30,9 @@ export default function SignUpPage(props) {
   function handleChange(e) {
     setUser({
       ...user,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
-    setAuthRequest({...authRequest, [e.target.name]: e.target.value});
+    setAuthRequest({ ...authRequest, [e.target.name]: e.target.value });
   }
 
   // function handleFileInput(e) {
@@ -52,27 +55,27 @@ export default function SignUpPage(props) {
       localStorage.setItem("user", JSON.stringify(res));
     });
     navigate("/");
-  }
+  };
 
   return (
     <>
-      <Header />
-      <div className="signupCard">
+      <div className="signup-container">
         <div className="side-blurb">
-          <div className="side-blurb-container">
-            <img src="/signup.png" id="signup-page_image" />
-            <div id="side-blurb_text">
-              <h1>Never miss another doctor's appointment</h1>
-              <ul>
-                <li>Top Notch Care</li>
-                <li>Driver-Passenger Compatibility</li>
-                <li>Minimal Wait Times</li>
-              </ul>
-            </div>
+          <div id="side-blurb-text">
+            <span><GiHealthCapsule /></span>
+            <p>Top Notch Care</p>
+          </div>
+          <div id="side-blurb-text">
+            <span><MdOutlineDriveEta /></span>
+            <p>Driver-Passenger Compatibility</p>
+          </div>
+          <div id="side-blurb-text">
+            <span><GiTimeBomb /></span>
+            <p>Minimal Wait Times</p>
           </div>
         </div>
         <form autoComplete="off" onSubmit={handleSubmit} className="signupForm">
-          <h3>Get Started</h3>
+          <h3>Get Started with Healthshare</h3>
           <div className="nameSU">
             <label className="formLabel">Name (required)</label>
             <input
@@ -177,12 +180,13 @@ export default function SignUpPage(props) {
             <button type="submit" id="signup-form_btn">
               Sign Up
             </button>
+            <p>Have an account? <Link to="/login" id="nav-to-login">Login</Link></p>
           </div>
         </form>
 
-        <div className="error">
+        {/* <div className="error">
           {error ? <ErrorMessage error={error} /> : null}
-        </div>
+        </div> */}
       </div>
     </>
   );
