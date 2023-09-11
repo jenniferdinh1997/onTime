@@ -10,6 +10,7 @@ export default function LoginPage({ setUser }) {
   const [state, setState] = useState({
     email: "",
     password: "",
+    role: "rider"
   });
   const navigate = useNavigate();
 

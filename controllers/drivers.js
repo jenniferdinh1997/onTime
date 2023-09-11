@@ -98,9 +98,9 @@ const login = async (req, res) => {
   // } catch (err) {
   //   return res.status(401).json(err);
   // } 
-  let { email, password } = req.body;
+  let { email, password, role } = req.body;
   
-  Driver.findOne({ email: email }).then((driver) => {
+  Driver.findOne({ email: email, role: role }).then((driver) => {
     if (!driver) {
       return res.status(404).json({ errors: [{ driver: "Not found" }] });
     } else {

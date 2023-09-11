@@ -29,6 +29,7 @@ function getUserFromToken() {
 
 function removeToken() {
   localStorage.removeItem("user");
+  localStorage.removeItem("driver");
 }
 
 const tokenService = {

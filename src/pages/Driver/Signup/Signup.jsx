@@ -20,6 +20,7 @@ const Signup = () => {
     carColor: "",
     accessibility: "",
     password: "",
+    role: "driver"
   });
 
   const [authRequest, setAuthRequest] = useState({

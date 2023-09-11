@@ -4,6 +4,7 @@ import "./App.css";
 import SignupPage from "../SignupPage/SignupPage";
 import DriverSignup from "../Driver/Signup/Signup";
 import LoginPage from "../LoginPage/LoginPage";
+import DriverLogin from "../Driver/Login/Login";
 import RideDetails from "../RideDetails/RideDetails";
 import ProfilePage from "../ProfilePage/ProfilePage";
 import Home from "../Home/Home";
@@ -19,15 +20,17 @@ function App() {
   function handleLogout() {
     userService.logout();
     setUser(null);
+    setDriver(null);
   }
 
   return (
     <>
       {user || driver ? (
         <Routes>
-          <Route path="/login" element={<LoginPage />} />
+          {/* <Route path="/login" element={<LoginPage />} />
+          <Route path="/login/driver" element={<DriverLogin />} />
           <Route path="/signup" element={<SignupPage />} />
-          <Route path="/signup/driver" element={<DriverSignup />} />
+          <Route path="/signup/driver" element={<DriverSignup />} /> */}
           <Route
             path="/"
             element={<Home user={user} handleLogout={handleLogout} />}
@@ -52,6 +55,7 @@ function App() {
       ) : (
         <Routes>
           <Route path="/login" element={<LoginPage setUser={setUser}/>} />
+          <Route path="/login/driver" element={<DriverLogin setDriver={setDriver}/>} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/signup/driver" element={<DriverSignup />} />
           <Route path="/*" element={<Navigate to="/login" />} />

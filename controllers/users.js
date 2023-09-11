@@ -94,9 +94,9 @@ const login = async (req, res) => {
   // } catch (err) {
   //   return res.status(401).json(err);
   // } 
-  let { email, password } = req.body;
+  let { email, password, role } = req.body;
   
-  User.findOne({ email: email }).then((user) => {
+  User.findOne({ email: email, role: role }).then((user) => {
     if (!user) {
       return res.status(404).json({ errors: [{ user: "Not found" }] });
     } else {

@@ -17,6 +17,7 @@ export default function SignUpPage(props) {
     language: "",
     accessibility: "",
     password: "",
+    role: "rider"
   });
   // const [file, setFile] = useState('');
   const navigate = useNavigate();

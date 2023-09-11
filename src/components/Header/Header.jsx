@@ -42,7 +42,7 @@ export default function Header({ handleLogout, handleShowForm }) {
           </Link>
           <Link to="/about">About Us</Link>
           <Link to="/trip" onClick={handleShowForm}>
-            Ride
+            Drive
           </Link>
           <Link to="/trip/history">History</Link>
         </div>

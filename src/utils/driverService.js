@@ -8,7 +8,7 @@ const signup = async (driver) => {
     return response.data;
 };
 
-const login = async (creds) => {
+export const login = async (creds) => {
     const response = await axios.post(`${BASE_URL}/login/driver`, creds);
     return response.data;
 };
@@ -19,8 +19,6 @@ export const getDriver = () => {
 
 const driverService = {
     signup,
-    // logout,
-    login
     // getProfile
   };
   
