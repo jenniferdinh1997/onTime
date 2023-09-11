@@ -99,6 +99,10 @@
     align-items: center;
 }
 
+.submitSU p {
+    margin: 10px;
+}
+
 #nav-to-login {
     color: #5fa8d3;
     font-weight: 500;

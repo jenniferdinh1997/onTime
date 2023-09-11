@@ -20,7 +20,20 @@ const driverSchema = new mongoose.Schema({
   },
   language: { 
     type: String,
-    default: "English"
+    default: "English",
+    enum: ["English", "Spanish", "Mandarin", "French", "Vietnamese", "Other"]
+  },
+  carMake: {
+    type: String
+  },
+  carModel: {
+    type: String
+  },
+  carYear: {
+    type: Number
+  },
+  carColor: {
+    type: String
   },
   accessibility: { 
     type: Boolean 
@@ -37,6 +50,7 @@ const driverSchema = new mongoose.Schema({
     default: Date.now()
   },
   role: {
+    type: String,
     default: "driver"
   }
 });

@@ -20,7 +20,8 @@ const userSchema = new mongoose.Schema({
   },
   language: { 
     type: String,
-    default: "English"
+    default: "English",
+    enum: ["English", "Spanish", "Mandarin", "French", "Vietnamese", "Other"]
   },
   accessibility: { 
     type: Boolean 
@@ -37,6 +38,7 @@ const userSchema = new mongoose.Schema({
     default: Date.now()
   },
   role: {
+    type: String,
     default: "rider"
   }
 });

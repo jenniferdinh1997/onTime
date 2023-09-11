@@ -24,7 +24,7 @@ export default function Intro() {
                 <button id="about-btn">
                     <span className="transition"></span>
                     <span className="gradient"></span>
-                    <span className="label">Sign Up to Drive</span>
+                    <Link to="signup/driver" className="label">Sign Up to Drive</Link>
                 </button>
             </div>
         </div>

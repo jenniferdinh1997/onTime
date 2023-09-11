@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
-import Header from "../../components/Header/Header";
 import userService from "../../utils/userService";
 import { useNavigate, Link } from "react-router-dom";
 import "./SignupPage.css";
@@ -132,7 +131,7 @@ export default function SignUpPage(props) {
           </div>
 
           <div className="accSU">
-            <label className="formLabel">Accessibility Issues</label>
+            <label className="formLabel">Accessibility</label>
             <div className="radio">
               <input
                 type="radio"
@@ -181,6 +180,7 @@ export default function SignUpPage(props) {
               Sign Up
             </button>
             <p>Have an account? <Link to="/login" id="nav-to-login">Login</Link></p>
+            <Link to="/signup/driver" id="nav-to-login">Drive with Healthshare</Link>
           </div>
         </form>
 

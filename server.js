@@ -17,6 +17,7 @@ app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 app.use(express.static(path.join(__dirname, "build")));
 
 app.use("/api/users", require("./routes/api/users"));
+app.use('/api/drivers', require('./routes/api/drivers'));
 app.use('/api/rides', require('./routes/api/rides'));
 
 app.get("/*", function (req, res) {
