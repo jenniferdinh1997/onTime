@@ -1,6 +1,8 @@
 .ride-history-container {
-    width: 80%;
-    margin: 100px auto;
+    background-color: #f7f9fb;
+    margin-left: 100px;
+    padding: 50px 80px;
+    height: 100vh;
 }
 
 .ride-history-container_rides {

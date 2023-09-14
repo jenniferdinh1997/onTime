@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../assets/logo.png";
 import { FaRegUser } from "react-icons/fa";
 import { HiOutlineLogout } from "react-icons/hi";
@@ -12,28 +12,39 @@ import { BiHelpCircle } from "react-icons/bi";
 export default function Header({ handleLogout, handleShowForm }) {
   const user = JSON.parse(localStorage.getItem("user"));
   const driver = JSON.parse(localStorage.getItem("driver"));
+  const navigate = useNavigate();
+
+  const driverLogout = () => {
+    localStorage.removeItem("driver");
+    window.location.reload();
+  };
+
+  const userLogout = () => {
+    localStorage.removeItem("user");
+    window.location.reload();
+  }
 
   if (user) {
     return (
-      <div className="header-container">
-        <div className="left-nav">
-          <Link to="/">
-            <img src={Logo} className="header-logo" />
-          </Link>
-          <Link to="/about">About Us</Link>
-          <Link to="/trip" onClick={handleShowForm}>
-            Ride
-          </Link>
-          <Link to={`/trip/history/${user.message._id}`}>History</Link>
-        </div>
-
-        <div className="right-nav">
-          {/* <img src={user.photoUrl} className="nav-avatar" /> */}
-          <Link to={`/${user.message.name}`}>{user.message.name}</Link>
-          <Link to="/" onClick={handleLogout}>
-            Log Out
-          </Link>
-        </div>
+      <div className="user-header-container">
+        <Link to="/">
+          <IoHomeOutline />
+        </Link>
+        <Link to={`/${user.message.name}`}>
+          <FaRegUser />
+        </Link>
+        <Link to="/trip" onClick={handleShowForm}>
+          <BsFillCarFrontFill />
+        </Link>
+        <Link to={`/trip/history/${user.message._id}`}>
+          <HiOutlineClipboardDocumentList />
+        </Link>
+        <Link to="">
+          <BiHelpCircle />
+        </Link>
+        <p onClick={userLogout}>
+          <HiOutlineLogout />
+        </p>
       </div>
     );
   }
@@ -41,7 +52,7 @@ export default function Header({ handleLogout, handleShowForm }) {
   if (driver) {
     return (
       <div className="driver-header-container">
-          <Link to="/">
+          <Link to="/home/driver">
             <IoHomeOutline />
           </Link>
           <Link to={`/${driver.message.name}`}>
@@ -56,9 +67,9 @@ export default function Header({ handleLogout, handleShowForm }) {
           <Link to="">
             <BiHelpCircle />
           </Link>
-          <Link to="" onClick={handleLogout}>
+          <p onClick={driverLogout}>
             <HiOutlineLogout />
-          </Link>
+          </p>
       </div>
     );
   }

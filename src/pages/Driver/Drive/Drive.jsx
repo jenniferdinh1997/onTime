@@ -4,16 +4,22 @@ import { useNavigate, Link } from "react-router-dom";
 import Header from "../../../components/Header/Header";
 import Footer from "../../../components/Footer/Footer";
 import Passenger from "../../../components/Passenger/Passenger";
-import {getAvailable} from "../../../utils/driverService";
+import {getAvailable, getDriver} from "../../../utils/driverService";
 
 const Drive = () => {
     const [available, setAvailable] = useState([]);
     const [updated, setUpdated] = useState({});
+    const driver = getDriver().message;
 
     useEffect(() => {
-        getAvailable().then((res) => {
-            setAvailable(res.available);
-        })
+      getAvailable().then((res) => {
+        const compatible = res.available.filter(
+          (item) =>
+            item.user?.accessibility === driver.accessibility &&
+            item.user.language === driver.language
+        );
+        setAvailable(compatible);
+      });
     }, [updated]);
 
     return (

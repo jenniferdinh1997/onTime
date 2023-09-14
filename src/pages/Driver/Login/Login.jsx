@@ -3,6 +3,7 @@ import "./Login.css";
 import ErrorMessage from "../../../components/ErrorMessage/ErrorMessage";
 import { login } from "../../../utils/driverService";
 import { useNavigate, Link } from "react-router-dom";
+import Logo from "../../../assets/logo.png";
 
 export default function LoginPage({ setDriver }) {
   const [error, setError] = useState("");
@@ -26,7 +27,7 @@ export default function LoginPage({ setDriver }) {
       localStorage.setItem("driver", JSON.stringify(res));
       setDriver(res);
     });
-    navigate("/");
+    navigate("/home/driver");
   };
 
   return (
@@ -35,7 +36,7 @@ export default function LoginPage({ setDriver }) {
         <div className="login-header-container">
           <div className="left-nav">
             <Link to="/">
-              <img src="/logo.png" className="header-logo" />
+              <img src={Logo} className="header-logo" />
             </Link>
           </div>
 

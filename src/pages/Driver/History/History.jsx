@@ -18,7 +18,7 @@ const History = () => {
       <>
         <Header />
         <div className="driver-history-container">
-          <h3>Recent Trips</h3>
+          <h1>Recent Trips</h1>
           <table className="driver-history-table">
             <thead>
               <tr>

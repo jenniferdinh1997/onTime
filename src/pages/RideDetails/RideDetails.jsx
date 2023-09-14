@@ -13,7 +13,6 @@ export default function AddRide({ user, handleLogout }) {
     const [error, setError] = useState('');
     const [showForm, setShowForm] = useState(true);
     const [showConfirm, setShowConfirm] = useState(false)
-    const [showHistory, setShowHistory] = useState(false)
 
     const handleAddRide = async (ride) => {
         try {
@@ -22,56 +21,28 @@ export default function AddRide({ user, handleLogout }) {
             });
             setShowForm(false);
             setShowConfirm(true);
-            // setShowHistory(false);
         } catch(err) {
             setError(err.message);
         }
     };
 
-    //show all the rides
-    // async function getRides() {
-    //     try {
-    //         const data = await rideApi.getAll();
-    //         setAllRides([...data.ride]);
-    //     } catch(err) {
-    //         setError(err.message);
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     getRides();
-    // }, []);
-
-    //show ride form on click in header
-    function handleShowForm(e) {
-        e.preventDefault();
-        setShowForm(true);
-        setShowConfirm(false)
-        setShowHistory(false);
-    }
-
-    //delete a ride
-    // function deleteRide(_id) {
-    //     setAllRides(allRides.filter((ride) => _id !== ride._id))
-    // }
-
     return (
-      <div className="rides">
+      <div>
         <Header
           user={user}
-          handleShowForm={handleShowForm}
           handleLogout={handleLogout}
         />
-        {showForm ? (
-            <AddRideForm handleAddRide={handleAddRide} />
-        ): null }
-        {showConfirm ? (
-            <RideConfirmation
-                user={user}
-                currentRide={currentRide}
-            />
-        ): null}
-        <Footer />
+        <div className="ride-container">
+            {showForm ? (
+                <AddRideForm handleAddRide={handleAddRide} />
+            ): null }
+            {showConfirm ? (
+                <RideConfirmation
+                    user={user}
+                    currentRide={currentRide}
+                />
+            ): null}
+        </div>
       </div>
     );
 }

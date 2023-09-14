@@ -13,6 +13,7 @@ import RideHistory from "../RideHistory/RideHistory";
 import userService from "../../utils/userService";
 import Drive from "../Driver/Drive/Drive";
 import History from "../Driver/History/History";
+import DriverHome from "../Driver/Home/Home";
 import { getDriver } from "../../utils/driverService";
 
 function App() {
@@ -58,6 +59,10 @@ function App() {
           <Route
             path="/drive"
             element={<Drive driver={driver} handleLogout={handleLogout} />}
+          />
+          <Route
+            path="/home/driver"
+            element={<DriverHome driver={driver} handleLogout={handleLogout} />}
           />
           <Route
             path="/about"

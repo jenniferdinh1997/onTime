@@ -32,6 +32,10 @@ export const getTrips = async (driverId) => {
     return response.data;
 };
 
+export const logout = async () => {
+    tokenService.removeToken();
+};
+
 const driverService = {
     signup,
     // getProfile
