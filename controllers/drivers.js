@@ -145,14 +145,50 @@ async function profile(req, res) {
   }
 }
 
-/*----- Helper Functions -----*/
-
 function createJWT(driver) {
   return jwt.sign({ driver }, SECRET, { expiresIn: "24h" });
 }
+
+const getAvail = async (req, res) => {
+  try {
+    const available = await Ride.find({
+      $or: [{ driver: { $exists: false } }, { driver: null }],
+    }).populate("user");
+    res.status(200).json({ available: available });
+  } catch (err) {
+    res.status(400).json({ err });
+  }
+};
+
+const acceptRide = async (req, res) => {
+  try {
+    const updatedRide = await Ride.findByIdAndUpdate(
+      req.params.id,
+      {
+        driver: req.body.driver,
+      },
+      { upsert: true }
+    );
+    res.status(200).json({ updatedRide: updatedRide });
+  } catch (err) {
+    res.status(400).json({ err });
+  }
+};
+
+const getTrips = async (req, res) => {
+  try {
+    const trips = await Ride.find({ driver: req.params.driverId }).populate("user").exec();
+    res.status(200).json({ trips: trips });
+  } catch (err) {
+    res.status(400).json({ err });
+  }
+};
 
 module.exports = {
   signup,
   login,
   profile,
+  getAvail,
+  acceptRide,
+  getTrips
 };

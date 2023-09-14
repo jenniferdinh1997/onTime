@@ -14,7 +14,7 @@ export default function SignUpPage(props) {
     dob: "",
     email: "",
     phone: "",
-    language: "",
+    language: "English",
     accessibility: "",
     password: "",
     role: "rider"
@@ -39,7 +39,6 @@ export default function SignUpPage(props) {
   //   setFile(e.target.files[0]) //places our uploaded file in the first place of files array
   // }
 
-  //submits entire contents of the form
   const handleSubmit = async (e) => {
     e.preventDefault();
     // const formData = new FormData()
@@ -62,15 +61,21 @@ export default function SignUpPage(props) {
       <div className="signup-container">
         <div className="side-blurb">
           <div id="side-blurb-text">
-            <span><GiHealthCapsule /></span>
+            <span>
+              <GiHealthCapsule />
+            </span>
             <p>Top Notch Care</p>
           </div>
           <div id="side-blurb-text">
-            <span><MdOutlineDriveEta /></span>
+            <span>
+              <MdOutlineDriveEta />
+            </span>
             <p>Driver-Passenger Compatibility</p>
           </div>
           <div id="side-blurb-text">
-            <span><GiTimeBomb /></span>
+            <span>
+              <GiTimeBomb />
+            </span>
             <p>Minimal Wait Times</p>
           </div>
         </div>
@@ -122,13 +127,19 @@ export default function SignUpPage(props) {
 
           <div className="langSU">
             <label className="formLabel">Language</label>
-            <input
-              type="text"
+            <select
+              className="input"
               name="language"
               value={user.language}
-              className="input"
               onChange={handleChange}
-            />
+            >
+              <option value="English">English</option>
+              <option value="Spanish">Spanish</option>
+              <option value="Mandarin">Mandarin</option>
+              <option value="French">French</option>
+              <option value="Vietnamese">Vietnamese</option>
+              <option value="Other">Other</option>
+            </select>
           </div>
 
           <div className="accSU">
@@ -180,8 +191,15 @@ export default function SignUpPage(props) {
             <button type="submit" id="signup-form_btn">
               Sign Up
             </button>
-            <p>Have an account? <Link to="/login" id="nav-to-login">Login</Link></p>
-            <Link to="/signup/driver" id="nav-to-login">Drive with Healthshare</Link>
+            <p>
+              Have an account?{" "}
+              <Link to="/login" id="nav-to-login">
+                Login
+              </Link>
+            </p>
+            <Link to="/signup/driver" id="nav-to-login">
+              Drive with Healthshare
+            </Link>
           </div>
         </form>
 

@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import "./AddRideForm.css";
+import { getUser } from "../../utils/userService";
 
 const AddRideForm = ({ handleAddRide }) => {
+  const currentUser = getUser();
+
   const [trip, setTrip] = useState({
+    user: currentUser.message,
     pickup: "",
-    dropoff: "",
+    dropoff: ""
   });
 
   function handleChange(e) {

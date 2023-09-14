@@ -15,7 +15,6 @@ export default function AddRide({ user, handleLogout }) {
     const [showConfirm, setShowConfirm] = useState(false)
     const [showHistory, setShowHistory] = useState(false)
 
-    // create a new ride, hide form after user requests ride
     const handleAddRide = async (ride) => {
         try {
             await addRide(ride).then((res) => {

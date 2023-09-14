@@ -1,7 +1,7 @@
 import tokenService from "./tokenService";
 import axios from "axios";
 
-const BASE_URL = "/api/users/";
+const BASE_URL = "/api/users";
 
 // NOTE THIS IS configured to send of a multi/part form request
 // aka photo
@@ -27,26 +27,15 @@ const signup = async (user) => {
   return response.data;
 }
 
-function getUser() {
+export const getUser = () => {
   return JSON.parse(localStorage.getItem("user"));
-}
+};
 
 function logout() {
   tokenService.removeToken();
 }
 
 const login = async (creds) => {
-  // return fetch(BASE_URL + "login", {
-  //   method: "POST",
-  //   headers: new Headers({ "Content-Type": "application/json" }),
-  //   body: JSON.stringify(creds),
-  // })
-  //   .then((res) => {
-  //     // Valid login if we have a status of 2xx (res.ok)
-  //     if (res.ok) return res.json();
-  //     throw new Error("Bad Credentials!");
-  //   })
-  //   .then(({ token }) => tokenService.setToken(token));
   const response = await axios.post(`${BASE_URL}/login`, creds);
   return response.data;
 }

@@ -8,7 +8,7 @@ export const addRide = async (ride) => {
   return response.data;
 }
 
-export const getRides = async () => {
-  const response = await axios.get(`${BASE_URL}/getTrips`);
+export const getRides = async (userId) => {
+  const response = await axios.get(`${BASE_URL}/getTrips/${userId}`);
   return response.data;
 }

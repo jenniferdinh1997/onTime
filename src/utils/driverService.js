@@ -15,7 +15,22 @@ export const login = async (creds) => {
 
 export const getDriver = () => {
     return JSON.parse(localStorage.getItem("driver"));
-}
+};
+
+export const getAvailable = async () => {
+    const response = await axios.get(`${BASE_URL}/available`);
+    return response.data;
+};
+
+export const acceptRide = async (id, driverId) => {
+    const response = await axios.put(`${BASE_URL}/accept/${id}`, {driver: driverId});
+    return response.data;
+};
+
+export const getTrips = async (driverId) => {
+    const response = await axios.get(`${BASE_URL}/trips/${driverId}`);
+    return response.data;
+};
 
 const driverService = {
     signup,

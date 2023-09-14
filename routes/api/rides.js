@@ -5,6 +5,6 @@ const multer = require("multer");
 const upload = multer();
 
 router.post('/addTrip', ridesCtrl.create);
-router.get('/getTrips', ridesCtrl.index);
+router.get('/getTrips/:userId', ridesCtrl.index);
 
 module.exports = router;

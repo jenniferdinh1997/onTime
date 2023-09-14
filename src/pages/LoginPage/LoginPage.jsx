@@ -4,6 +4,7 @@ import Header from "../../components/Header/Header";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import userService from "../../utils/userService";
 import { useNavigate, Link } from "react-router-dom";
+import Logo from "../../assets/logo.png";
 
 export default function LoginPage({ setUser }) {
   const [error, setError] = useState("");
@@ -36,7 +37,7 @@ export default function LoginPage({ setUser }) {
         <div className="login-header-container">
           <div className="left-nav">
             <Link to="/">
-              <img src="/logo.png" className="header-logo" />
+              <img src={Logo} className="header-logo" />
             </Link>
           </div>
 
@@ -67,7 +68,6 @@ export default function LoginPage({ setUser }) {
               <label className="formLabel">Password</label>
               <input
                 type="password"
-                label="Password"
                 name="password"
                 value={state.password}
                 className="input"

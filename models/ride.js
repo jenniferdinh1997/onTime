@@ -13,6 +13,9 @@ const rideSchema = new mongoose.Schema({
     },
     dropoff: { 
         type: String 
+    },
+    driver: {
+        type: mongoose.Schema.Types.ObjectId, ref: "Driver"
     }
 });
 

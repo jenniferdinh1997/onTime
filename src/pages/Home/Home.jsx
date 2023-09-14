@@ -3,6 +3,8 @@ import Header from "../../components/Header/Header";
 import Intro from "../../components/Intro/Intro";
 import Footer from "../../components/Footer/Footer";
 import { HashLink } from "react-router-hash-link";
+import Home1 from "../../assets/home1.png";
+import Home2 from "../../assets/home2.png";
 import "./Home.css";
 
 export default function Home({ user, handleLogout }) {
@@ -16,7 +18,7 @@ export default function Home({ user, handleLogout }) {
           yourself
         </h4>
         <div className="desc-left">
-          <img src={"/home1.png"} className="home1" />
+          <img src={Home1} className="home1" />
           <h6>Quality Care </h6>
           <p>
             Drivers are interviewed thoroughly and required CPR certification to
@@ -26,7 +28,7 @@ export default function Home({ user, handleLogout }) {
         </div>
 
         <div className="desc-right">
-          <img src={"/home2.png"} className="home2" />
+          <img src={Home2} className="home2" />
           <h6>Patient-Driver Compatibility</h6>
           <p>
             Patients are matched specifically to a driver that speaks the same

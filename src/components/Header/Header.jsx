@@ -1,8 +1,13 @@
 import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import Logo from "../../assets/logo.png";
 import { FaRegUser } from "react-icons/fa";
-import { HiChevronDown } from "react-icons/hi";
+import { HiOutlineLogout } from "react-icons/hi";
+import { IoHomeOutline } from "react-icons/io5";
+import { BsFillCarFrontFill } from "react-icons/bs";
+import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
+import { BiHelpCircle } from "react-icons/bi";
 
 export default function Header({ handleLogout, handleShowForm }) {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -13,13 +18,13 @@ export default function Header({ handleLogout, handleShowForm }) {
       <div className="header-container">
         <div className="left-nav">
           <Link to="/">
-            <img src="/logo.png" className="header-logo" />
+            <img src={Logo} className="header-logo" />
           </Link>
           <Link to="/about">About Us</Link>
           <Link to="/trip" onClick={handleShowForm}>
             Ride
           </Link>
-          <Link to="/trip/history">History</Link>
+          <Link to={`/trip/history/${user.message._id}`}>History</Link>
         </div>
 
         <div className="right-nav">
@@ -35,25 +40,25 @@ export default function Header({ handleLogout, handleShowForm }) {
 
   if (driver) {
     return (
-      <div className="header-container">
-        <div className="left-nav">
+      <div className="driver-header-container">
           <Link to="/">
-            <img src="/logo.png" className="header-logo" />
+            <IoHomeOutline />
           </Link>
-          <Link to="/about">About Us</Link>
-          <Link to="/trip" onClick={handleShowForm}>
-            Drive
+          <Link to={`/${driver.message.name}`}>
+            <FaRegUser />
           </Link>
-          <Link to="/trip/history">History</Link>
-        </div>
-
-        <div className="right-nav">
-          {/* <img src={user.photoUrl} className="nav-avatar" /> */}
-          <Link to={`/${driver.message.name}`}>{driver.message.name}</Link>
-          <Link to="/" onClick={handleLogout}>
-            Log Out
+          <Link to="/drive">
+            <BsFillCarFrontFill />
           </Link>
-        </div>
+          <Link to={`/drive/history/${driver.message._id}`}>
+            <HiOutlineClipboardDocumentList />
+          </Link>
+          <Link to="">
+            <BiHelpCircle />
+          </Link>
+          <Link to="" onClick={handleLogout}>
+            <HiOutlineLogout />
+          </Link>
       </div>
     );
   }

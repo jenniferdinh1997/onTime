@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import About2 from "../../assets/about2.jpg";
 import "./About.css";
 
 export default function About({ user, handleLogout }) {
@@ -14,7 +15,7 @@ export default function About({ user, handleLogout }) {
         </div>
 
         <div className="about2">
-          <img src={"/about2.jpg"} className="about2img" />
+          <img src={About2} className="about2img" />
           <div className="about2-text-container">
             <h4>The Inspiration</h4>
             <p>

@@ -1,0 +1,12 @@
+.drive-container {
+    height: 100vh;
+    padding: 50px 80px;
+    margin-left: 100px;
+}
+
+.drive-container_section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-gap: 25px;
+}

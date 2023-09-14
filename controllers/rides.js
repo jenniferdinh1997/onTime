@@ -3,7 +3,7 @@ const Ride = require('../models/ride');
 const create = async (req,res) => {
     try {
         const ride = await Ride.create({
-            user: req.user, 
+            user: req.body.user, 
             pickup: req.body.pickup, 
             dropoff: req.body.dropoff
         });
@@ -16,7 +16,7 @@ const create = async (req,res) => {
 
 const index = async (req,res) => {
     try {
-        const ride = await Ride.find().exec();
+        const ride = await Ride.find({ user: req.params.userId}).populate("user").exec();
         res.status(200).json({ ride });
     } catch(err) {
         console.error(err.message);
