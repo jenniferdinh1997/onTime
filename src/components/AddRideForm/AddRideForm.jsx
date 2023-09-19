@@ -1,22 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./AddRideForm.css";
 import { getUser } from "../../utils/userService";
 
 const AddRideForm = ({ handleAddRide }) => {
   const currentUser = getUser();
+  const autoCompleteRef1 = useRef();
+  const inputRef1 = useRef();
+  const autoCompleteRef2 = useRef();
+  const inputRef2 = useRef();
+  
+  useEffect(() => {
+    autoCompleteRef1.current = new window.google.maps.places.Autocomplete(
+      inputRef1.current
+    );
+    autoCompleteRef1.current.addListener("place_changed", async function () {
+      const place1 = await autoCompleteRef1.current.getPlace();
+      setTrip((prev) => ({...prev, pickup: place1.formatted_address}));
+    });
+    autoCompleteRef2.current = new window.google.maps.places.Autocomplete(
+      inputRef2.current
+    );
+    autoCompleteRef2.current.addListener("place_changed", async function () {
+      const place2 = await autoCompleteRef2.current.getPlace();
+      setTrip((prev) => ({...prev, dropoff: place2.formatted_address}));
+    });
+  }, []);
 
   const [trip, setTrip] = useState({
     user: currentUser.message,
-    pickup: "",
+    pickup:"",
     dropoff: ""
   });
-
-  function handleChange(e) {
-    setTrip({
-      ...trip,
-      [e.target.name]: e.target.value,
-    });
-  };
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -31,17 +45,15 @@ const AddRideForm = ({ handleAddRide }) => {
         <input
           type="text"
           name="pickup"
-          value={trip.pickup}
           className="input"
-          onChange={handleChange}
+          ref={inputRef1}
         />
         <label className="formLabel">Drop Off Location</label>
         <input
           type="text"
           name="dropoff"
-          value={trip.dropoff}
           className="input"
-          onChange={handleChange}
+          ref={inputRef2}
         />
         <button type="submit" id="submit-add-ride-btn">
           <span className="label">Request a Ride</span>

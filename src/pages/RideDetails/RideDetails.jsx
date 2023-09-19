@@ -4,9 +4,10 @@ import Header from '../../components/Header/Header';
 import AddRideForm from '../../components/AddRideForm/AddRideForm';
 import RideConfirmation from '../../components/RideConfirmation/RideConfirmation';
 import Footer from '../../components/Footer/Footer';
-import Map from '../../components/Map/Map';
+import MapBackground from '../../components/Map/Map';
 import { addRide } from '../../utils/rideApi';
 import './RideDetails.css';
+// import { useJsApiLoader } from "@react-google-maps/api";
 
 export default function AddRide({ user, handleLogout }) {
     const [currentRide, setCurrentRide] = useState({});
@@ -26,6 +27,14 @@ export default function AddRide({ user, handleLogout }) {
         }
     };
 
+    // const { isLoaded } = useJsApiLoader({
+    //     googleMapsApiKey: process.env.MAPS_API_KEY,
+    // });
+
+    // if (!isLoaded) {
+    //     console.log("loading in progress")
+    // }
+
     return (
       <div>
         <Header
@@ -43,6 +52,7 @@ export default function AddRide({ user, handleLogout }) {
                 />
             ): null}
         </div>
+        <MapBackground />
       </div>
     );
 }

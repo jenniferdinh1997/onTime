@@ -26,6 +26,7 @@ const Signup = () => {
   const [authRequest, setAuthRequest] = useState({
     email: "",
     password: "",
+    role: "driver"
   });
 
   const navigate = useNavigate();
@@ -42,11 +43,9 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await driverService.signup(user).then((res) => {
-      console.log(res, "driver res");
       localStorage.setItem("jwttoken", JSON.stringify(res));
     });
     await driverService.login(authRequest).then((res) => {
-      console.log(res, "res2");
       localStorage.setItem("driver", JSON.stringify(res));
     });
     navigate("/");

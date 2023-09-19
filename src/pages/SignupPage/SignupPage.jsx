@@ -17,14 +17,16 @@ export default function SignUpPage(props) {
     language: "English",
     accessibility: "",
     password: "",
-    role: "rider"
+    role: "rider", 
   });
-  // const [file, setFile] = useState('');
+  const [file, setFile] = useState("");
+
   const navigate = useNavigate();
 
   const [authRequest, setAuthRequest] = useState({
     email: "",
     password: "",
+    role: "rider"
   });
 
   function handleChange(e) {
@@ -35,19 +37,21 @@ export default function SignUpPage(props) {
     setAuthRequest({ ...authRequest, [e.target.name]: e.target.value });
   }
 
-  // function handleFileInput(e) {
-  //   setFile(e.target.files[0]) //places our uploaded file in the first place of files array
-  // }
+  function handleFileInput(e) {
+    setFile(e.target.files[0])
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // const formData = new FormData()
-    // formData.append('photo', file)
+    const formData = new FormData();
+    formData.append("photo", file);
 
-    // for (let fieldName in state) {
-    //   formData.append(fieldName, state[fieldName])
-    // }
-    await userService.signup(user).then((res) => {
+    for (let fieldName in user) {
+      console.log(fieldName, user[fieldName]);
+      formData.append(fieldName, user[fieldName]);
+    }
+
+    await userService.signup(formData).then((res) => {
       localStorage.setItem("jwttoken", JSON.stringify(res));
     });
     await userService.login(authRequest).then((res) => {
@@ -177,16 +181,16 @@ export default function SignUpPage(props) {
             />
           </div>
 
-          {/* <div className='uploadSU'>
+          <div className='uploadSU'>
             <label className='formLabel'>Upload Photo: </label>
-            <label className='uploadLabel' for='upload-btn'>Choose File</label>
+            <label className='uploadLabel' htmlFor='upload-btn'>Choose File</label>
             <input
               type='file' 
               name='photo'
               id='upload-btn'
               onChange={handleFileInput} 
               hidden />
-          </div> */}
+          </div>
           <div className="submitSU">
             <button type="submit" id="signup-form_btn">
               Sign Up

@@ -30,9 +30,9 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  // photoUrl: { 
-  //   type: String 
-  // },
+  photo: { 
+    type: String 
+  },
   date: {
     type: Date,
     default: Date.now()

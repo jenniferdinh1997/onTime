@@ -21,7 +21,7 @@ export default function ProfilePage({ handleLogout }) {
         <Header user={user} handleLogout={handleLogout} />
         <div className="profile-page-container">
           <div className="profile-page-row_1">
-            <img src={Default} className="pfp_avatar" />
+            <img src={user.photo ? user.photo : Default} className="pfp_avatar" />
             <div className="profile-page_info">
               <h1>{user.name}</h1>
               <div className="profile-page_contact">

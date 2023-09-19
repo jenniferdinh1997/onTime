@@ -3,99 +3,71 @@ const Ride = require("../models/ride");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const SECRET = process.env.SECRET;
-// const { v4: uuidv4 } = require("uuid");
-// const S3 = require("aws-sdk/clients/s3");
-// const s3 = new S3(); // initialize the construcotr
-// now s3 can crud on our s3 buckets
+const { v4: uuidv4 } = require("uuid");
+const S3 = require("aws-sdk/clients/s3");
+const s3 = new S3();
 
 const signup = async (req, res) => {
-  // FilePath unique name to be saved to our bucket
-  // const filePath = `${uuidv4()}/${req.file.originalname}`;
-  // const params = {
-  //   Bucket: process.env.BUCKET_NAME,
-  //   Key: filePath,
-  //   Body: req.file.buffer,
-  // };
-  // s3.upload(params, async function (err, data) {
-  //   const user = new User({ ...req.body, photoUrl: data.Location });
-  //   try {
-  //     await user.save();
-  //     const token = createJWT(user); // user is the payload so this is the object in our jwt
-  //     res.json({ token });
-  //   } catch (err) {
-  //     res.status(400).json(err);
-  //   }
-  // });
-  const { name, dob, email, phone, language, accessibility, password } =
-    req.body;
+  const filePath = `${uuidv4()}/${req.file.originalname}`;
 
-  try {
-    let user = await User.findOne({ email });
+  s3.upload(
+    {
+      Bucket: process.env.BUCKET_NAME,
+      Key: filePath,
+      Body: req.file.buffer,
+    },
+    async (err, data) => {
+      console.log("file upload successful")
+      const { name, dob, email, phone, language, accessibility, password } =
+        req.body;
 
-    if (user) {
-      res.status(400).json({ errors: [{ msg: "User already exists" }] });
-    }
+      try {
+        let user = await User.findOne({ email });
 
-    // const avatar = gravatar.url(email, {
-    //   s: "200",
-    //   r: "pg",
-    //   d: "mm",
-    // });
+        if (user) {
+          res.status(400).json({ errors: [{ msg: "User already exists" }] });
+        }
 
-    user = new User({
-      name,
-      dob,
-      email,
-      phone,
-      language,
-      accessibility,
-      // avatar,
-      password,
-    });
+        user = new User({
+          name,
+          dob,
+          email,
+          phone,
+          language,
+          accessibility,
+          photo: data.Location,
+        });
 
-    const salt = await bcrypt.genSalt(10);
+        const salt = await bcrypt.genSalt(10);
 
-    user.password = await bcrypt.hash(password, salt);
+        user.password = await bcrypt.hash(password, salt);
 
-    await user.save();
+        await user.save();
 
-    const payload = {
-      user: {
-        id: user.id,
-      },
-    };
+        const payload = {
+          user: {
+            id: user.id,
+          },
+        };
 
-    jwt.sign(payload, SECRET, { expiresIn: "24h" }, (err, token) => {
-      if (err) {
-        throw err;
-      } else {
-        res.json({ token });
+        jwt.sign(payload, SECRET, { expiresIn: "24h" }, (err, token) => {
+          if (err) {
+            throw err;
+          } else {
+            res.json({ token });
+          }
+        });
+      } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Server error");
       }
-    });
-  } catch (error) {
-    console.error(error.message);
-    res.status(500).send("Server error");
-  }
+    }
+  );
 };
 
 const login = async (req, res) => {
-  // try {
-  //   const user = await User.findOne({ email: req.body.email });
-  //   if (!user) return res.status(401).json({ err: "bad credentials" });
-  //   // had to update the password from req.body.pw, to req.body password
-  //   user.comparePassword(req.body.password, (err, isMatch) => {
-  //     if (isMatch) {
-  //       const token = createJWT(user);
-  //       res.json({ token });
-  //     } else {
-  //       return res.status(401).json({ err: "bad credentials" });
-  //     }
-  //   });
-  // } catch (err) {
-  //   return res.status(401).json(err);
-  // } 
   let { email, password, role } = req.body;
-  
+
   User.findOne({ email: email, role: role }).then((user) => {
     if (!user) {
       return res.status(404).json({ errors: [{ user: "Not found" }] });

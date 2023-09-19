@@ -7,7 +7,7 @@ const RideConfirmation = ({ user, currentRide }) => {
     const navigate = useNavigate();
 
     const showHistory = () => {
-        navigate(`/trip/history/${user._id}`);
+        navigate(`/trip/history/${user.message._id}`);
     };
 
     const dateObject = new Date(currentRide.date);

@@ -60,7 +60,7 @@ const RideHistory = () => {
                 return (
                   <tr key={index}>
                     <td>{formattedDate}</td>
-                    <td>{item.driver?.name}</td>
+                    <td>{item.driver?.name ? item.driver.name : "Driver details unavailable"}</td>
                     <td>{item.pickup}</td>
                     <td>{item.dropoff}</td>
                     <td>$10</td>
